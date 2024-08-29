@@ -1,0 +1,10 @@
+In file included from /Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/components/mqtt/mqtt_app.h:4,
+                 from /Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/components/mqtt/mqtt_app.c:1:
+/Users/juliafarias/esp/esp-idf/components/mqtt/esp-mqtt/include/mqtt_client.h:14:10: fatal error: esp_event.h: No such file or directory
+   14 | #include "esp_event.h"
+      |          ^~~~~~~~~~~~~
+compilation terminated.
+make[2]: *** [esp-idf/mqtt/CMakeFiles/__idf_mqtt.dir/mqtt_app.c.obj] Error 1
+make[1]: *** [esp-idf/mqtt/CMakeFiles/__idf_mqtt.dir/all] Error 2
+make[1]: *** Waiting for unfinished jobs....
+make: *** [all] Error 2

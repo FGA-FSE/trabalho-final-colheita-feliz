@@ -1,0 +1,17 @@
+/Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/components/mqtt_app.c: In function 'mqtt_app_start':
+/Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/components/mqtt_app.c:27:10: error: 'esp_mqtt_client_config_t' has no member named 'username'
+   27 |         .username = "OofGhKktrxNDGLHN8QkZ"
+      |          ^~~~~~~~
+/Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/components/mqtt_app.c:25:47: error: missing braces around initializer [-Werror=missing-braces]
+   25 |     const esp_mqtt_client_config_t mqtt_cfg = {
+      |                                               ^
+   26 |         .broker.address.uri = "mqtt://164.41.98.25",
+      |                                                    }}
+   27 |         .username = "OofGhKktrxNDGLHN8QkZ"
+      |                     {
+   28 |     };
+      |     }
+cc1: some warnings being treated as errors
+make[2]: *** [esp-idf/components/CMakeFiles/__idf_components.dir/mqtt_app.c.obj] Error 1
+make[1]: *** [esp-idf/components/CMakeFiles/__idf_components.dir/all] Error 2
+make: *** [all] Error 2

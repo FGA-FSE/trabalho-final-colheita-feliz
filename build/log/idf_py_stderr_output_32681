@@ -1,0 +1,18 @@
+/Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/main/dht11.c: In function 'readDHT11':
+/Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/main/dht11.c:29:13: error: implicit declaration of function 'ets_delay_us'; did you mean 'esp_rom_delay_us'? [-Werror=implicit-function-declaration]
+   29 |             ets_delay_us(1);
+      |             ^~~~~~~~~~~~
+      |             esp_rom_delay_us
+/Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/main/dht11.c: In function 'dht_task':
+/Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/main/dht11.c:72:13: error: implicit declaration of function 'esp_mqtt_client_publish' [-Werror=implicit-function-declaration]
+   72 |             esp_mqtt_client_publish(client, "v1/devices/me/telemetry", payload, 0, 1, 0);
+      |             ^~~~~~~~~~~~~~~~~~~~~~~
+/Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/main/dht11.c:72:37: error: 'client' undeclared (first use in this function)
+   72 |             esp_mqtt_client_publish(client, "v1/devices/me/telemetry", payload, 0, 1, 0);
+      |                                     ^~~~~~
+/Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/main/dht11.c:72:37: note: each undeclared identifier is reported only once for each function it appears in
+cc1: some warnings being treated as errors
+make[2]: *** [esp-idf/main/CMakeFiles/__idf_main.dir/dht11.c.obj] Error 1
+make[2]: *** Waiting for unfinished jobs....
+make[1]: *** [esp-idf/main/CMakeFiles/__idf_main.dir/all] Error 2
+make: *** [all] Error 2

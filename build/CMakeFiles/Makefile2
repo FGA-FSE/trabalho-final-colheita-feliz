@@ -2305,7 +2305,7 @@ CMakeFiles/bootloader.dir/clean:
 CMakeFiles/gen_project_binary.dir/all: CMakeFiles/irrigacao_inteligente.elf.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/gen_project_binary.dir/build.make CMakeFiles/gen_project_binary.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/gen_project_binary.dir/build.make CMakeFiles/gen_project_binary.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/build/CMakeFiles --progress-num= "Built target gen_project_binary"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/build/CMakeFiles --progress-num=86 "Built target gen_project_binary"
 .PHONY : CMakeFiles/gen_project_binary.dir/all
 
 # Build rule for subdir invocation for target.
@@ -2468,7 +2468,7 @@ CMakeFiles/monitor.dir/all: CMakeFiles/irrigacao_inteligente.elf.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/monitor.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/build/CMakeFiles 98
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/build/CMakeFiles 97
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/monitor.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/build/CMakeFiles 0
 .PHONY : CMakeFiles/monitor.dir/rule
@@ -2595,12 +2595,12 @@ CMakeFiles/irrigacao_inteligente.elf.dir/all: esp-idf/main/CMakeFiles/__idf_main
 CMakeFiles/irrigacao_inteligente.elf.dir/all: esp-idf/components/CMakeFiles/__idf_components.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/irrigacao_inteligente.elf.dir/build.make CMakeFiles/irrigacao_inteligente.elf.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/irrigacao_inteligente.elf.dir/build.make CMakeFiles/irrigacao_inteligente.elf.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/build/CMakeFiles --progress-num=86 "Built target irrigacao_inteligente.elf"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/build/CMakeFiles --progress-num= "Built target irrigacao_inteligente.elf"
 .PHONY : CMakeFiles/irrigacao_inteligente.elf.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/irrigacao_inteligente.elf.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/build/CMakeFiles 98
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/build/CMakeFiles 97
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/irrigacao_inteligente.elf.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/build/CMakeFiles 0
 .PHONY : CMakeFiles/irrigacao_inteligente.elf.dir/rule
@@ -2907,7 +2907,7 @@ esp-idf/mbedtls/mbedtls/3rdparty/p256-m/CMakeFiles/p256m.dir/clean:
 esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/all: esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedx509.dir/all
 	$(MAKE) $(MAKESILENT) -f esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/build.make esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/depend
 	$(MAKE) $(MAKESILENT) -f esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/build.make esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/build/CMakeFiles --progress-num=87,88,89,90,91,92,93,94,95 "Built target mbedcrypto"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/build/CMakeFiles --progress-num=87,88,89,90,91,92,93,94,95,96 "Built target mbedcrypto"
 .PHONY : esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/all
 
 # Build rule for subdir invocation for target.
@@ -2938,7 +2938,7 @@ esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedx509.dir/all: esp-idf/mbedtls/mbe
 
 # Build rule for subdir invocation for target.
 esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedx509.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/build/CMakeFiles 71
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/build/CMakeFiles 70
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedx509.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/build/CMakeFiles 0
 .PHONY : esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedx509.dir/rule
@@ -2959,12 +2959,12 @@ esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedx509.dir/clean:
 esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedtls.dir/all: esp-idf/esp_app_format/CMakeFiles/__idf_esp_app_format.dir/all
 	$(MAKE) $(MAKESILENT) -f esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedtls.dir/build.make esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedtls.dir/depend
 	$(MAKE) $(MAKESILENT) -f esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedtls.dir/build.make esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedtls.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/build/CMakeFiles --progress-num=96,97,98 "Built target mbedtls"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/build/CMakeFiles --progress-num=97,98 "Built target mbedtls"
 .PHONY : esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedtls.dir/all
 
 # Build rule for subdir invocation for target.
 esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedtls.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/build/CMakeFiles 70
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/build/CMakeFiles 69
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedtls.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/build/CMakeFiles 0
 .PHONY : esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedtls.dir/rule

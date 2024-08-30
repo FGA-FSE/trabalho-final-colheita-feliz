@@ -175,6 +175,30 @@ __idf_main/fast:
 	cd /Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/build && $(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/build
 .PHONY : __idf_main/fast
 
+adc_module.obj: adc_module.c.obj
+.PHONY : adc_module.obj
+
+# target to build an object file
+adc_module.c.obj:
+	cd /Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/build && $(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/adc_module.c.obj
+.PHONY : adc_module.c.obj
+
+adc_module.i: adc_module.c.i
+.PHONY : adc_module.i
+
+# target to preprocess a source file
+adc_module.c.i:
+	cd /Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/build && $(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/adc_module.c.i
+.PHONY : adc_module.c.i
+
+adc_module.s: adc_module.c.s
+.PHONY : adc_module.s
+
+# target to generate assembly for a file
+adc_module.c.s:
+	cd /Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/build && $(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/adc_module.c.s
+.PHONY : adc_module.c.s
+
 dht11.obj: dht11.c.obj
 .PHONY : dht11.obj
 
@@ -198,6 +222,30 @@ dht11.s: dht11.c.s
 dht11.c.s:
 	cd /Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/build && $(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/dht11.c.s
 .PHONY : dht11.c.s
+
+gpio_setup.obj: gpio_setup.c.obj
+.PHONY : gpio_setup.obj
+
+# target to build an object file
+gpio_setup.c.obj:
+	cd /Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/build && $(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/gpio_setup.c.obj
+.PHONY : gpio_setup.c.obj
+
+gpio_setup.i: gpio_setup.c.i
+.PHONY : gpio_setup.i
+
+# target to preprocess a source file
+gpio_setup.c.i:
+	cd /Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/build && $(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/gpio_setup.c.i
+.PHONY : gpio_setup.c.i
+
+gpio_setup.s: gpio_setup.c.s
+.PHONY : gpio_setup.s
+
+# target to generate assembly for a file
+gpio_setup.c.s:
+	cd /Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/build && $(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/gpio_setup.c.s
+.PHONY : gpio_setup.c.s
 
 main.obj: main.c.obj
 .PHONY : main.obj
@@ -223,6 +271,30 @@ main.c.s:
 	cd /Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/build && $(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/main.c.s
 .PHONY : main.c.s
 
+waterSensor.obj: waterSensor.c.obj
+.PHONY : waterSensor.obj
+
+# target to build an object file
+waterSensor.c.obj:
+	cd /Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/build && $(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/waterSensor.c.obj
+.PHONY : waterSensor.c.obj
+
+waterSensor.i: waterSensor.c.i
+.PHONY : waterSensor.i
+
+# target to preprocess a source file
+waterSensor.c.i:
+	cd /Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/build && $(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/waterSensor.c.i
+.PHONY : waterSensor.c.i
+
+waterSensor.s: waterSensor.c.s
+.PHONY : waterSensor.s
+
+# target to generate assembly for a file
+waterSensor.c.s:
+	cd /Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/build && $(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/waterSensor.c.s
+.PHONY : waterSensor.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -236,12 +308,21 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... __idf_main"
+	@echo "... adc_module.obj"
+	@echo "... adc_module.i"
+	@echo "... adc_module.s"
 	@echo "... dht11.obj"
 	@echo "... dht11.i"
 	@echo "... dht11.s"
+	@echo "... gpio_setup.obj"
+	@echo "... gpio_setup.i"
+	@echo "... gpio_setup.s"
 	@echo "... main.obj"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... waterSensor.obj"
+	@echo "... waterSensor.i"
+	@echo "... waterSensor.s"
 .PHONY : help
 
 

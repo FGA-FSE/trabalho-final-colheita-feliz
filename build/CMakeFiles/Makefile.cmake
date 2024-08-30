@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_GENERATOR "Unix Makefiles")
 set(CMAKE_MAKEFILE_DEPENDS
   "CMakeCache.txt"
   "/Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/.git/HEAD"
-  "/Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/.git/refs/heads/main"
+  "/Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/.git/refs/heads/feature/water_sensor"
   "/Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/CMakeLists.txt"
   "CMakeFiles/3.30.2/CMakeASMCompiler.cmake"
   "CMakeFiles/3.30.2/CMakeCCompiler.cmake"

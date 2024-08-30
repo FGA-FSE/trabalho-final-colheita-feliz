@@ -112,6 +112,7 @@ esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj: \
  /Users/juliafarias/esp/esp-idf/components/soc/esp32/include/soc/gpio_pins.h \
  /Users/juliafarias/esp/esp-idf/components/esp_driver_gpio/include/driver/gpio_etm.h \
  /Users/juliafarias/esp/esp-idf/components/esp_hw_support/include/esp_etm.h \
+ /Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/main/waterSensor.h \
  /Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/components/mqtt_app.h \
  /Users/juliafarias/esp/esp-idf/components/mqtt/esp-mqtt/include/mqtt_client.h \
  /Users/juliafarias/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/xtensa-esp-elf/include/string.h \
@@ -119,4 +120,71 @@ esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj: \
  /Users/juliafarias/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/xtensa-esp-elf/include/sys/string.h \
  /Users/juliafarias/esp/esp-idf/components/esp_event/include/esp_event.h \
  /Users/juliafarias/esp/esp-idf/components/esp_event/include/esp_event_base.h \
- /Users/juliafarias/esp/esp-idf/components/tcp_transport/include/esp_transport.h
+ /Users/juliafarias/esp/esp-idf/components/tcp_transport/include/esp_transport.h \
+ /Users/juliafarias/esp/esp-idf/components/esp_hw_support/include/esp_sleep.h \
+ /Users/juliafarias/esp/esp-idf/components/hal/include/hal/touch_sensor_types.h \
+ /Users/juliafarias/esp/esp-idf/components/esp_netif/include/esp_netif.h \
+ /Users/juliafarias/esp/esp-idf/components/esp_netif/include/esp_netif_ip_addr.h \
+ /Users/juliafarias/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/xtensa-esp-elf/include/machine/endian.h \
+ /Users/juliafarias/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/xtensa-esp-elf/include/machine/_endian.h \
+ /Users/juliafarias/esp/esp-idf/components/esp_netif/include/esp_netif_types.h \
+ /Users/juliafarias/esp/esp-idf/components/esp_netif/include/esp_netif_defaults.h \
+ /Users/juliafarias/esp/esp-idf/components/lwip/include/lwip/sockets.h \
+ /Users/juliafarias/esp/esp-idf/components/lwip/lwip/src/include/lwip/sockets.h \
+ /Users/juliafarias/esp/esp-idf/components/lwip/lwip/src/include/lwip/opt.h \
+ /Users/juliafarias/esp/esp-idf/components/lwip/port/include/lwipopts.h \
+ /Users/juliafarias/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/xtensa-esp-elf/include/unistd.h \
+ /Users/juliafarias/esp/esp-idf/components/newlib/platform_include/sys/unistd.h \
+ /Users/juliafarias/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/xtensa-esp-elf/include/sys/types.h \
+ /Users/juliafarias/esp/esp-idf/components/newlib/platform_include/sys/select.h \
+ /Users/juliafarias/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/xtensa-esp-elf/include/sys/select.h \
+ /Users/juliafarias/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/xtensa-esp-elf/include/sys/_sigset.h \
+ /Users/juliafarias/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/xtensa-esp-elf/include/sys/_timeval.h \
+ /Users/juliafarias/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/xtensa-esp-elf/include/sys/timespec.h \
+ /Users/juliafarias/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/xtensa-esp-elf/include/sys/_timespec.h \
+ /Users/juliafarias/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/xtensa-esp-elf/include/sys/_pthreadtypes.h \
+ /Users/juliafarias/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/xtensa-esp-elf/include/sys/sched.h \
+ /Users/juliafarias/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/xtensa-esp-elf/include/machine/types.h \
+ /Users/juliafarias/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/xtensa-esp-elf/include/sys/unistd.h \
+ /Users/juliafarias/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/xtensa-esp-elf/include/sys/fcntl.h \
+ /Users/juliafarias/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/xtensa-esp-elf/include/sys/_default_fcntl.h \
+ /Users/juliafarias/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/xtensa-esp-elf/include/sys/stat.h \
+ /Users/juliafarias/esp/esp-idf/components/newlib/platform_include/time.h \
+ /Users/juliafarias/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/xtensa-esp-elf/include/time.h \
+ /Users/juliafarias/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/xtensa-esp-elf/include/machine/time.h \
+ /Users/juliafarias/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/xtensa-esp-elf/include/signal.h \
+ /Users/juliafarias/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/xtensa-esp-elf/include/sys/signal.h \
+ /Users/juliafarias/esp/esp-idf/components/newlib/platform_include/sys/time.h \
+ /Users/juliafarias/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/xtensa-esp-elf/include/sys/time.h \
+ /Users/juliafarias/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/xtensa-esp-elf/include/machine/_time.h \
+ /Users/juliafarias/esp/esp-idf/components/newlib/platform_include/sys/ioctl.h \
+ /Users/juliafarias/esp/esp-idf/components/newlib/platform_include/sys/poll.h \
+ /Users/juliafarias/esp/esp-idf/components/esp_system/include/esp_task.h \
+ /Users/juliafarias/esp/esp-idf/components/esp_hw_support/include/esp_random.h \
+ /Users/juliafarias/esp/esp-idf/components/lwip/port/include/sntp/sntp_get_set_time.h \
+ /Users/juliafarias/esp/esp-idf/components/lwip/port/include/sockets_ext.h \
+ /Users/juliafarias/esp/esp-idf/components/lwip/port/freertos/include/arch/sys_arch.h \
+ /Users/juliafarias/esp/esp-idf/components/lwip/lwip/src/include/lwip/debug.h \
+ /Users/juliafarias/esp/esp-idf/components/lwip/lwip/src/include/lwip/arch.h \
+ /Users/juliafarias/esp/esp-idf/components/lwip/port/esp32xx/include/arch/cc.h \
+ /Users/juliafarias/esp/esp-idf/components/newlib/platform_include/errno.h \
+ /Users/juliafarias/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/xtensa-esp-elf/include/errno.h \
+ /Users/juliafarias/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/xtensa-esp-elf/include/sys/errno.h \
+ /Users/juliafarias/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/xtensa-esp-elf/include/ctype.h \
+ /Users/juliafarias/esp/esp-idf/components/lwip/lwip/src/include/lwip/ip_addr.h \
+ /Users/juliafarias/esp/esp-idf/components/lwip/lwip/src/include/lwip/def.h \
+ /Users/juliafarias/esp/esp-idf/components/lwip/lwip/src/include/lwip/ip4_addr.h \
+ /Users/juliafarias/esp/esp-idf/components/lwip/lwip/src/include/lwip/ip6_addr.h \
+ /Users/juliafarias/esp/esp-idf/components/lwip/lwip/src/include/lwip/def.h \
+ /Users/juliafarias/esp/esp-idf/components/lwip/lwip/src/include/lwip/ip6_zone.h \
+ /Users/juliafarias/esp/esp-idf/components/lwip/lwip/src/include/lwip/netif.h \
+ /Users/juliafarias/esp/esp-idf/components/lwip/lwip/src/include/lwip/err.h \
+ /Users/juliafarias/esp/esp-idf/components/lwip/lwip/src/include/lwip/pbuf.h \
+ /Users/juliafarias/esp/esp-idf/components/lwip/lwip/src/include/lwip/stats.h \
+ /Users/juliafarias/esp/esp-idf/components/lwip/lwip/src/include/lwip/mem.h \
+ /Users/juliafarias/esp/esp-idf/components/lwip/lwip/src/include/lwip/memp.h \
+ /Users/juliafarias/esp/esp-idf/components/lwip/lwip/src/include/lwip/priv/memp_std.h \
+ /Users/juliafarias/esp/esp-idf/components/lwip/lwip/src/include/lwip/priv/memp_priv.h \
+ /Users/juliafarias/esp/esp-idf/components/lwip/lwip/src/include/lwip/priv/mem_priv.h \
+ /Users/juliafarias/esp/esp-idf/components/lwip/lwip/src/include/lwip/inet.h \
+ /Users/juliafarias/esp/esp-idf/components/lwip/lwip/src/include/lwip/errno.h

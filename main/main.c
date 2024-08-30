@@ -5,6 +5,9 @@
 #include "waterSensor.h"
 #include "mqtt_app.h"
 #include "esp_sleep.h"
+#include "esp_netif.h"
+#include "esp_event.h"
+#include "lwip/sockets.h"
 
 void app_main(void)
 {
@@ -16,12 +19,19 @@ void app_main(void)
     }
     ESP_ERROR_CHECK(ret);
 
+    // Inicializa a pilha de rede TCP/IP
+    ESP_ERROR_CHECK(esp_netif_init());
+
+    // Inicializa o loop de eventos
+    ESP_ERROR_CHECK(esp_event_loop_create_default());
+
     // Inicializa o cliente MQTT
     mqtt_app_start();
 
-    //  leitura do DHT11
-    // xTaskCreate(&dht_task, "dht_task", 2048, NULL, 5, NULL);
-
+    // Cria a task para leitura do sensor de água
     xTaskCreate(&water_sensor_task, "water_sensor_task", 2048, NULL, 5, NULL);
+
+    // Cria a task para leitura do sensor DHT11
+    xTaskCreate(&dht_task, "dht_task", 2048, NULL, 5, NULL);
 
 }

@@ -2,30 +2,23 @@
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "esp_adc/adc_oneshot.h"
-
 #include "gpio_setup.h"
 #include "adc_module.h"
-
+#include "mqtt_client.h"
 #include "esp_log.h"
 
+static const char *TAG = "WATER_SENSOR_APP";
+static esp_mqtt_client_handle_t client; 
 
+void water_sensor_task(void *pvParameter) {
+    char payload[100];
+    while (1) {
 
-int readSensor(){
+        int x = analogRead(ADC_CHANNEL_6);
 
-    adc_init(ADC_UNIT_1);
-
-    pinMode(ADC_CHANNEL_6, GPIO_ANALOG);
-
-    do{
-
-    int x = analogRead(ADC_CHANNEL_6);
-
-    ESP_LOGI("ADC", "Raw ADC value from GPIO15: %d", x);
-    
-    
-    vTaskDelay(500 / portTICK_PERIOD_MS);
-        vTaskDelay(500/portTICK_PERIOD_MS);
-    } while (1);
-
-    return 0;
+        sprintf(payload, "{\"waterLevel\": %d}", x);
+        esp_mqtt_client_publish(client, "v1/devices/me/attributes", payload, 0, 1, 0);
+        ESP_LOGI(TAG, "Published: %s", payload);
+        vTaskDelay(2000 / portTICK_PERIOD_MS);  // Delay de 2 segundos
+    }
 }

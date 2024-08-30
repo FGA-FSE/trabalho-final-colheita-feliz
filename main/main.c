@@ -16,11 +16,12 @@ void app_main(void)
     }
     ESP_ERROR_CHECK(ret);
 
-    readSensor();
-
     // Inicializa o cliente MQTT
     mqtt_app_start();
 
     //  leitura do DHT11
-    xTaskCreate(&dht_task, "dht_task", 2048, NULL, 5, NULL);
+    // xTaskCreate(&dht_task, "dht_task", 2048, NULL, 5, NULL);
+
+    xTaskCreate(&water_sensor_task, "water_sensor_task", 2048, NULL, 5, NULL);
+
 }

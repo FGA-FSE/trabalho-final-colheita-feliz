@@ -2,7 +2,9 @@
 #include "freertos/task.h"
 #include "nvs_flash.h"
 #include "dht11.h"
+#include "waterSensor.h"
 #include "mqtt_app.h"
+#include "esp_sleep.h"
 
 void app_main(void)
 {
@@ -13,6 +15,8 @@ void app_main(void)
         ret = nvs_flash_init();
     }
     ESP_ERROR_CHECK(ret);
+
+    readSensor();
 
     // Inicializa o cliente MQTT
     mqtt_app_start();

@@ -3,6 +3,7 @@
 #include "nvs_flash.h"
 #include "dht11.h"
 #include "mqtt_app.h"
+#include "soil_moisture.h" 
 
 void app_main(void)
 {
@@ -19,4 +20,7 @@ void app_main(void)
 
     //  leitura do DHT11
     xTaskCreate(&dht_task, "dht_task", 2048, NULL, 5, NULL);
+
+    // Tarefa de monitoramento de umidade do solo
+    xTaskCreate(&soil_moisture_task, "soil_moisture_task", 4096, NULL, 5, NULL);
 }

@@ -1,13 +1,13 @@
 # Target labels
  bootloader
 # Source files and their labels
-/Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/build/CMakeFiles/bootloader
-/Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/build/CMakeFiles/bootloader.rule
-/Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/build/CMakeFiles/bootloader-complete.rule
-/Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule
-/Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule
-/Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule
-/Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule
-/Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule
-/Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule
-/Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule
+D:/Documentos/trabalho-final-colheita-feliz/build/CMakeFiles/bootloader
+D:/Documentos/trabalho-final-colheita-feliz/build/CMakeFiles/bootloader.rule
+D:/Documentos/trabalho-final-colheita-feliz/build/CMakeFiles/bootloader-complete.rule
+D:/Documentos/trabalho-final-colheita-feliz/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule
+D:/Documentos/trabalho-final-colheita-feliz/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule
+D:/Documentos/trabalho-final-colheita-feliz/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule
+D:/Documentos/trabalho-final-colheita-feliz/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule
+D:/Documentos/trabalho-final-colheita-feliz/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule
+D:/Documentos/trabalho-final-colheita-feliz/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule
+D:/Documentos/trabalho-final-colheita-feliz/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule

@@ -14,6 +14,10 @@
 
 const static char *TAG = "EXAMPLE";
 
+
+void oled_init();
+void oled_display_soil_moisture(int soilmoisturepercent);
+
 static int adc_raw[2][10];
 
 const int AirValue = 3200;   // Valor de referência para o ar (seco)
@@ -21,6 +25,8 @@ const int WaterValue = 1199; // Valor de referência para a água (úmido)
 const int SensorPin = SENSOR_PIN;  // GPIO15 no ESP32
 
 void soil_moisture_task(void *pvParameter) {
+
+    oled_init();
 
     //-------------ADC1 Init---------------//
     adc_oneshot_unit_handle_t adc1_handle;
@@ -48,6 +54,8 @@ void soil_moisture_task(void *pvParameter) {
             moisture_percent = 0;
         }
         ESP_LOGI(TAG, "Soil Moisture Percent: %d%%", moisture_percent);
+
+        oled_display_soil_moisture(moisture_percent);
 
         vTaskDelay(pdMS_TO_TICKS(1000));
     }

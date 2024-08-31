@@ -1,7 +1,7 @@
 {
     "version":            "1.1",
     "project_name":       "irrigacao_inteligente",
-    "project_version":    "b0ba800-dirty",
+    "project_version":    "38b37e1-dirty",
     "project_path":       "D:/Documentos/trabalho-final-colheita-feliz",
     "idf_path":           "C:/Espressif/frameworks/esp-idf-v5.3",
     "build_dir":          "D:/Documentos/trabalho-final-colheita-feliz/build",
@@ -130,7 +130,7 @@
             "managed_reqs": [],
             "managed_priv_reqs": [],
             "file": "D:/Documentos/trabalho-final-colheita-feliz/build/esp-idf/components/libcomponents.a",
-            "sources": [ "D:/Documentos/trabalho-final-colheita-feliz/components/soil_moisture.c", "D:/Documentos/trabalho-final-colheita-feliz/components/mqtt_app.c" ],
+            "sources": [ "D:/Documentos/trabalho-final-colheita-feliz/components/soil_moisture.c", "D:/Documentos/trabalho-final-colheita-feliz/components/mqtt_app.c", "D:/Documentos/trabalho-final-colheita-feliz/components/oled_display.c" ],
             "include_dirs": [ "." ]
         },
         "console": {

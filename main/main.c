@@ -18,9 +18,10 @@ void app_main(void)
     // Inicializa o cliente MQTT
     // mqtt_app_start();
 
-    // //  leitura do DHT11
+    //  leitura do DHT11
     // xTaskCreate(&dht_task, "dht_task", 2048, NULL, 5, NULL);
 
     // Tarefa de monitoramento de umidade do solo
      xTaskCreate(&soil_moisture_task, "soil_moisture_task", 4096, NULL, 5, NULL);
+
 }

@@ -16,7 +16,9 @@ void water_sensor_task(void *pvParameter) {
 
         int x = analogRead(ADC_CHANNEL_6);
 
-        sprintf(payload, "{\"waterLevel\": %d}", x);
+        int porcentagem = x/23
+
+        sprintf(payload, "{\"waterLevel\": %d}", porcentagem);
         esp_mqtt_client_publish(client, "v1/devices/me/attributes", payload, 0, 1, 0);
         ESP_LOGI(TAG, "Published: %s", payload);
         vTaskDelay(2000 / portTICK_PERIOD_MS);  // Delay de 2 segundos

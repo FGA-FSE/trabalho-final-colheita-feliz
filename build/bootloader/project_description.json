@@ -1,7 +1,7 @@
 {
     "version":            "1.1",
     "project_name":       "bootloader",
-    "project_version":    "v5.4-dev-2306-gdbce23f8a4",
+    "project_version":    "v5.4-dev-2620-g6673376297",
     "project_path":       "/Users/juliafarias/esp/esp-idf/components/bootloader/subproject",
     "idf_path":           "/Users/juliafarias/esp/esp-idf",
     "build_dir":          "/Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/build/bootloader",
@@ -11,7 +11,7 @@
     "app_elf":            "bootloader.elf",
     "app_bin":            "bootloader.bin",
     "build_type":         "flash_app",
-    "git_revision":       "v5.4-dev-2306-gdbce23f8a4",
+    "git_revision":       "v5.4-dev-2620-g6673376297",
     "target":             "esp32",
     "rev":                "0",
     "min_rev":            "0",
@@ -21,12 +21,12 @@
     "monitor_toolprefix": "xtensa-esp32-elf-",
     "c_compiler":         "/Users/juliafarias/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc",
     "config_environment" : {
-        "COMPONENT_KCONFIGS" : "/Users/juliafarias/esp/esp-idf/components/efuse/Kconfig;/Users/juliafarias/esp/esp-idf/components/esp_common/Kconfig;/Users/juliafarias/esp/esp-idf/components/esp_hw_support/Kconfig;/Users/juliafarias/esp/esp-idf/components/esp_system/Kconfig;/Users/juliafarias/esp/esp-idf/components/freertos/Kconfig;/Users/juliafarias/esp/esp-idf/components/hal/Kconfig;/Users/juliafarias/esp/esp-idf/components/log/Kconfig;/Users/juliafarias/esp/esp-idf/components/newlib/Kconfig;/Users/juliafarias/esp/esp-idf/components/soc/Kconfig;/Users/juliafarias/esp/esp-idf/components/spi_flash/Kconfig",
+        "COMPONENT_KCONFIGS" : "/Users/juliafarias/esp/esp-idf/components/efuse/Kconfig;/Users/juliafarias/esp/esp-idf/components/esp_common/Kconfig;/Users/juliafarias/esp/esp-idf/components/esp_hw_support/Kconfig;/Users/juliafarias/esp/esp-idf/components/esp_security/Kconfig;/Users/juliafarias/esp/esp-idf/components/esp_system/Kconfig;/Users/juliafarias/esp/esp-idf/components/freertos/Kconfig;/Users/juliafarias/esp/esp-idf/components/hal/Kconfig;/Users/juliafarias/esp/esp-idf/components/log/Kconfig;/Users/juliafarias/esp/esp-idf/components/newlib/Kconfig;/Users/juliafarias/esp/esp-idf/components/soc/Kconfig;/Users/juliafarias/esp/esp-idf/components/spi_flash/Kconfig",
         "COMPONENT_KCONFIGS_PROJBUILD" : "/Users/juliafarias/esp/esp-idf/components/bootloader/Kconfig.projbuild;/Users/juliafarias/esp/esp-idf/components/esp_app_format/Kconfig.projbuild;/Users/juliafarias/esp/esp-idf/components/esp_rom/Kconfig.projbuild;/Users/juliafarias/esp/esp-idf/components/esptool_py/Kconfig.projbuild;/Users/juliafarias/esp/esp-idf/components/partition_table/Kconfig.projbuild"
     },
     "common_component_reqs": [ "log", "esp_rom", "esp_common", "esp_hw_support", "newlib", "xtensa" ],
-    "build_components" : [ "bootloader", "bootloader_support", "efuse", "esp_app_format", "esp_bootloader_format", "esp_common", "esp_hw_support", "esp_rom", "esp_system", "esptool_py", "freertos", "hal", "log", "main", "micro-ecc", "newlib", "partition_table", "soc", "spi_flash", "xtensa", "" ],
-    "build_component_paths" : [ "/Users/juliafarias/esp/esp-idf/components/bootloader", "/Users/juliafarias/esp/esp-idf/components/bootloader_support", "/Users/juliafarias/esp/esp-idf/components/efuse", "/Users/juliafarias/esp/esp-idf/components/esp_app_format", "/Users/juliafarias/esp/esp-idf/components/esp_bootloader_format", "/Users/juliafarias/esp/esp-idf/components/esp_common", "/Users/juliafarias/esp/esp-idf/components/esp_hw_support", "/Users/juliafarias/esp/esp-idf/components/esp_rom", "/Users/juliafarias/esp/esp-idf/components/esp_system", "/Users/juliafarias/esp/esp-idf/components/esptool_py", "/Users/juliafarias/esp/esp-idf/components/freertos", "/Users/juliafarias/esp/esp-idf/components/hal", "/Users/juliafarias/esp/esp-idf/components/log", "/Users/juliafarias/esp/esp-idf/components/bootloader/subproject/main", "/Users/juliafarias/esp/esp-idf/components/bootloader/subproject/components/micro-ecc", "/Users/juliafarias/esp/esp-idf/components/newlib", "/Users/juliafarias/esp/esp-idf/components/partition_table", "/Users/juliafarias/esp/esp-idf/components/soc", "/Users/juliafarias/esp/esp-idf/components/spi_flash", "/Users/juliafarias/esp/esp-idf/components/xtensa", "" ],
+    "build_components" : [ "bootloader", "bootloader_support", "efuse", "esp_app_format", "esp_bootloader_format", "esp_common", "esp_hw_support", "esp_rom", "esp_security", "esp_system", "esptool_py", "freertos", "hal", "log", "main", "micro-ecc", "newlib", "partition_table", "soc", "spi_flash", "xtensa", "" ],
+    "build_component_paths" : [ "/Users/juliafarias/esp/esp-idf/components/bootloader", "/Users/juliafarias/esp/esp-idf/components/bootloader_support", "/Users/juliafarias/esp/esp-idf/components/efuse", "/Users/juliafarias/esp/esp-idf/components/esp_app_format", "/Users/juliafarias/esp/esp-idf/components/esp_bootloader_format", "/Users/juliafarias/esp/esp-idf/components/esp_common", "/Users/juliafarias/esp/esp-idf/components/esp_hw_support", "/Users/juliafarias/esp/esp-idf/components/esp_rom", "/Users/juliafarias/esp/esp-idf/components/esp_security", "/Users/juliafarias/esp/esp-idf/components/esp_system", "/Users/juliafarias/esp/esp-idf/components/esptool_py", "/Users/juliafarias/esp/esp-idf/components/freertos", "/Users/juliafarias/esp/esp-idf/components/hal", "/Users/juliafarias/esp/esp-idf/components/log", "/Users/juliafarias/esp/esp-idf/components/bootloader/subproject/main", "/Users/juliafarias/esp/esp-idf/components/bootloader/subproject/components/micro-ecc", "/Users/juliafarias/esp/esp-idf/components/newlib", "/Users/juliafarias/esp/esp-idf/components/partition_table", "/Users/juliafarias/esp/esp-idf/components/soc", "/Users/juliafarias/esp/esp-idf/components/spi_flash", "/Users/juliafarias/esp/esp-idf/components/xtensa", "" ],
     "build_component_info" : {
         "bootloader": {
             "alias": "idf::bootloader",
@@ -126,7 +126,7 @@
             "type": "LIBRARY",
             "lib": "__idf_esp_hw_support",
             "reqs": [ "soc" ],
-            "priv_reqs": [ "efuse", "spi_flash", "bootloader_support", "esp_system" ],
+            "priv_reqs": [ "efuse", "spi_flash", "bootloader_support", "esp_security", "esp_system" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
             "file": "/Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/build/bootloader/esp-idf/esp_hw_support/libesp_hw_support.a",
@@ -147,6 +147,21 @@
             "file": "/Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/build/bootloader/esp-idf/esp_rom/libesp_rom.a",
             "sources": [ "/Users/juliafarias/esp/esp-idf/components/esp_rom/patches/esp_rom_sys.c", "/Users/juliafarias/esp/esp-idf/components/esp_rom/patches/esp_rom_print.c", "/Users/juliafarias/esp/esp-idf/components/esp_rom/patches/esp_rom_crc.c", "/Users/juliafarias/esp/esp-idf/components/esp_rom/patches/esp_rom_uart.c", "/Users/juliafarias/esp/esp-idf/components/esp_rom/patches/esp_rom_spiflash.c", "/Users/juliafarias/esp/esp-idf/components/esp_rom/patches/esp_rom_efuse.c", "/Users/juliafarias/esp/esp-idf/components/esp_rom/patches/esp_rom_gpio.c", "/Users/juliafarias/esp/esp-idf/components/esp_rom/patches/esp_rom_longjmp.S" ],
             "include_dirs": [ "include", "esp32/include", "esp32/include/esp32", "esp32" ]
+        },
+        "esp_security": {
+            "alias": "idf::esp_security",
+            "target": "___idf_esp_security",
+            "prefix": "idf",
+            "dir": "/Users/juliafarias/esp/esp-idf/components/esp_security",
+            "type": "CONFIG_ONLY",
+            "lib": "__idf_esp_security",
+            "reqs": [],
+            "priv_reqs": [],
+            "managed_reqs": [],
+            "managed_priv_reqs": [],
+            "file": "",
+            "sources": [],
+            "include_dirs": [ "include" ]
         },
         "esp_system": {
             "alias": "idf::esp_system",
@@ -913,7 +928,7 @@
             "dir": "/Users/juliafarias/esp/esp-idf/components/esp_hw_support",
             "lib": "__idf_esp_hw_support",
             "reqs": [ "soc" ],
-            "priv_reqs": [ "efuse", "spi_flash", "bootloader_support", "esp_system" ],
+            "priv_reqs": [ "efuse", "spi_flash", "bootloader_support", "esp_security", "esp_system" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
             "include_dirs": [ "include", "include/soc", "include/soc/esp32", "dma/include", "ldo/include", "debug_probe/include" ]
@@ -1049,6 +1064,18 @@
             "managed_reqs": [],
             "managed_priv_reqs": [],
             "include_dirs": [ "include", "esp32/include", "esp32/include/esp32", "esp32" ]
+        },
+        "esp_security": {
+            "alias": "idf::esp_security",
+            "target": "___idf_esp_security",
+            "prefix": "idf",
+            "dir": "/Users/juliafarias/esp/esp-idf/components/esp_security",
+            "lib": "__idf_esp_security",
+            "reqs": [],
+            "priv_reqs": [],
+            "managed_reqs": [],
+            "managed_priv_reqs": [],
+            "include_dirs": [ "include" ]
         },
         "esp_system": {
             "alias": "idf::esp_system",

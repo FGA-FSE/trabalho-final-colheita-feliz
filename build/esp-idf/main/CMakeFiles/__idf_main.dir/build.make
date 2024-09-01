@@ -97,19 +97,35 @@ esp-idf/main/CMakeFiles/__idf_main.dir/dht11.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/__idf_main.dir/dht11.c.s"
 	cd /Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/build/esp-idf/main && /Users/juliafarias/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/main/dht11.c -o CMakeFiles/__idf_main.dir/dht11.c.s
 
+esp-idf/main/CMakeFiles/__idf_main.dir/wifi_ap.c.obj: esp-idf/main/CMakeFiles/__idf_main.dir/flags.make
+esp-idf/main/CMakeFiles/__idf_main.dir/wifi_ap.c.obj: /Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/main/wifi_ap.c
+esp-idf/main/CMakeFiles/__idf_main.dir/wifi_ap.c.obj: esp-idf/main/CMakeFiles/__idf_main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object esp-idf/main/CMakeFiles/__idf_main.dir/wifi_ap.c.obj"
+	cd /Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/build/esp-idf/main && /Users/juliafarias/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/main/CMakeFiles/__idf_main.dir/wifi_ap.c.obj -MF CMakeFiles/__idf_main.dir/wifi_ap.c.obj.d -o CMakeFiles/__idf_main.dir/wifi_ap.c.obj -c /Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/main/wifi_ap.c
+
+esp-idf/main/CMakeFiles/__idf_main.dir/wifi_ap.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/__idf_main.dir/wifi_ap.c.i"
+	cd /Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/build/esp-idf/main && /Users/juliafarias/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/main/wifi_ap.c > CMakeFiles/__idf_main.dir/wifi_ap.c.i
+
+esp-idf/main/CMakeFiles/__idf_main.dir/wifi_ap.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/__idf_main.dir/wifi_ap.c.s"
+	cd /Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/build/esp-idf/main && /Users/juliafarias/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/main/wifi_ap.c -o CMakeFiles/__idf_main.dir/wifi_ap.c.s
+
 # Object files for target __idf_main
 __idf_main_OBJECTS = \
 "CMakeFiles/__idf_main.dir/main.c.obj" \
-"CMakeFiles/__idf_main.dir/dht11.c.obj"
+"CMakeFiles/__idf_main.dir/dht11.c.obj" \
+"CMakeFiles/__idf_main.dir/wifi_ap.c.obj"
 
 # External object files for target __idf_main
 __idf_main_EXTERNAL_OBJECTS =
 
 esp-idf/main/libmain.a: esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj
 esp-idf/main/libmain.a: esp-idf/main/CMakeFiles/__idf_main.dir/dht11.c.obj
+esp-idf/main/libmain.a: esp-idf/main/CMakeFiles/__idf_main.dir/wifi_ap.c.obj
 esp-idf/main/libmain.a: esp-idf/main/CMakeFiles/__idf_main.dir/build.make
 esp-idf/main/libmain.a: esp-idf/main/CMakeFiles/__idf_main.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C static library libmain.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C static library libmain.a"
 	cd /Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/build/esp-idf/main && $(CMAKE_COMMAND) -P CMakeFiles/__idf_main.dir/cmake_clean_target.cmake
 	cd /Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/build/esp-idf/main && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/__idf_main.dir/link.txt --verbose=$(VERBOSE)
 

@@ -89,6 +89,11 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
+  include("/Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/build/bootloader/esp-idf/esp_security/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
   include("/Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/build/bootloader/esp-idf/esp_system/cmake_install.cmake")
 endif()
 

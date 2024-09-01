@@ -615,24 +615,10 @@ esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32/cache_sram
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/__idf_esp_hw_support.dir/port/esp32/cache_sram_mmu.c.s"
 	cd /Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/build/esp-idf/esp_hw_support && /Users/juliafarias/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/juliafarias/esp/esp-idf/components/esp_hw_support/port/esp32/cache_sram_mmu.c -o CMakeFiles/__idf_esp_hw_support.dir/port/esp32/cache_sram_mmu.c.s
 
-esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32/esp_crypto_lock.c.obj: esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/flags.make
-esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32/esp_crypto_lock.c.obj: /Users/juliafarias/esp/esp-idf/components/esp_hw_support/port/esp32/esp_crypto_lock.c
-esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32/esp_crypto_lock.c.obj: esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building C object esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32/esp_crypto_lock.c.obj"
-	cd /Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/build/esp-idf/esp_hw_support && /Users/juliafarias/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32/esp_crypto_lock.c.obj -MF CMakeFiles/__idf_esp_hw_support.dir/port/esp32/esp_crypto_lock.c.obj.d -o CMakeFiles/__idf_esp_hw_support.dir/port/esp32/esp_crypto_lock.c.obj -c /Users/juliafarias/esp/esp-idf/components/esp_hw_support/port/esp32/esp_crypto_lock.c
-
-esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32/esp_crypto_lock.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/__idf_esp_hw_support.dir/port/esp32/esp_crypto_lock.c.i"
-	cd /Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/build/esp-idf/esp_hw_support && /Users/juliafarias/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/juliafarias/esp/esp-idf/components/esp_hw_support/port/esp32/esp_crypto_lock.c > CMakeFiles/__idf_esp_hw_support.dir/port/esp32/esp_crypto_lock.c.i
-
-esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32/esp_crypto_lock.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/__idf_esp_hw_support.dir/port/esp32/esp_crypto_lock.c.s"
-	cd /Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/build/esp-idf/esp_hw_support && /Users/juliafarias/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/juliafarias/esp/esp-idf/components/esp_hw_support/port/esp32/esp_crypto_lock.c -o CMakeFiles/__idf_esp_hw_support.dir/port/esp32/esp_crypto_lock.c.s
-
 esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32/sar_periph_ctrl.c.obj: esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/flags.make
 esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32/sar_periph_ctrl.c.obj: /Users/juliafarias/esp/esp-idf/components/esp_hw_support/port/esp32/sar_periph_ctrl.c
 esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32/sar_periph_ctrl.c.obj: esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building C object esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32/sar_periph_ctrl.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building C object esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32/sar_periph_ctrl.c.obj"
 	cd /Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/build/esp-idf/esp_hw_support && /Users/juliafarias/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32/sar_periph_ctrl.c.obj -MF CMakeFiles/__idf_esp_hw_support.dir/port/esp32/sar_periph_ctrl.c.obj.d -o CMakeFiles/__idf_esp_hw_support.dir/port/esp32/sar_periph_ctrl.c.obj -c /Users/juliafarias/esp/esp-idf/components/esp_hw_support/port/esp32/sar_periph_ctrl.c
 
 esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32/sar_periph_ctrl.c.i: cmake_force
@@ -684,7 +670,6 @@ __idf_esp_hw_support_OBJECTS = \
 "CMakeFiles/__idf_esp_hw_support.dir/port/esp32/rtc_time.c.obj" \
 "CMakeFiles/__idf_esp_hw_support.dir/port/esp32/chip_info.c.obj" \
 "CMakeFiles/__idf_esp_hw_support.dir/port/esp32/cache_sram_mmu.c.obj" \
-"CMakeFiles/__idf_esp_hw_support.dir/port/esp32/esp_crypto_lock.c.obj" \
 "CMakeFiles/__idf_esp_hw_support.dir/port/esp32/sar_periph_ctrl.c.obj"
 
 # External object files for target __idf_esp_hw_support
@@ -729,11 +714,10 @@ esp-idf/esp_hw_support/libesp_hw_support.a: esp-idf/esp_hw_support/CMakeFiles/__
 esp-idf/esp_hw_support/libesp_hw_support.a: esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32/rtc_time.c.obj
 esp-idf/esp_hw_support/libesp_hw_support.a: esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32/chip_info.c.obj
 esp-idf/esp_hw_support/libesp_hw_support.a: esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32/cache_sram_mmu.c.obj
-esp-idf/esp_hw_support/libesp_hw_support.a: esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32/esp_crypto_lock.c.obj
 esp-idf/esp_hw_support/libesp_hw_support.a: esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32/sar_periph_ctrl.c.obj
 esp-idf/esp_hw_support/libesp_hw_support.a: esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/build.make
 esp-idf/esp_hw_support/libesp_hw_support.a: esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Linking C static library libesp_hw_support.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Linking C static library libesp_hw_support.a"
 	cd /Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/build/esp-idf/esp_hw_support && $(CMAKE_COMMAND) -P CMakeFiles/__idf_esp_hw_support.dir/cmake_clean_target.cmake
 	cd /Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/build/esp-idf/esp_hw_support && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/__idf_esp_hw_support.dir/link.txt --verbose=$(VERBOSE)
 

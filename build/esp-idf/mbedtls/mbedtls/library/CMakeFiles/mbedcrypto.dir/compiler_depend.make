@@ -413,9 +413,9 @@ esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/Users/juliafarias/esp/
   config/sdkconfig.h \
   /Users/juliafarias/esp/esp-idf/components/esp_common/include/esp_assert.h \
   /Users/juliafarias/esp/esp-idf/components/esp_common/include/esp_bit_defs.h \
+  /Users/juliafarias/esp/esp-idf/components/esp_hw_support/include/esp_crypto_lock.h \
   /Users/juliafarias/esp/esp-idf/components/esp_hw_support/include/esp_private/esp_crypto_lock_internal.h \
   /Users/juliafarias/esp/esp-idf/components/esp_hw_support/include/esp_private/periph_ctrl.h \
-  /Users/juliafarias/esp/esp-idf/components/esp_hw_support/include/soc/esp32/esp_crypto_lock.h \
   /Users/juliafarias/esp/esp-idf/components/hal/esp32/include/hal/mpi_ll.h \
   /Users/juliafarias/esp/esp-idf/components/hal/include/hal/mpi_hal.h \
   /Users/juliafarias/esp/esp-idf/components/hal/include/hal/mpi_types.h \
@@ -9034,6 +9034,10 @@ esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/version_features.c.obj
 
 /Users/juliafarias/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/xtensa-esp-elf/include/machine/time.h:
 
+/Users/juliafarias/esp/esp-idf/components/mbedtls/mbedtls/library/pkcs5.c:
+
+/Users/juliafarias/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/xtensa-esp-elf/include/machine/_time.h:
+
 /Users/juliafarias/esp/esp-idf/components/newlib/platform_include/sys/select.h:
 
 /Users/juliafarias/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/xtensa-esp-elf/include/alloca.h:
@@ -9056,15 +9060,7 @@ esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/version_features.c.obj
 
 /Users/juliafarias/esp/esp-idf/components/soc/include/soc/mpi_periph.h:
 
-/Users/juliafarias/esp/esp-idf/components/mbedtls/mbedtls/library/pkcs5.c:
-
-/Users/juliafarias/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/xtensa-esp-elf/include/machine/_time.h:
-
-/Users/juliafarias/esp/esp-idf/components/mbedtls/mbedtls/library/cmac.c:
-
-/Users/juliafarias/esp/esp-idf/components/soc/esp32/include/soc/dport_access.h:
-
-/Users/juliafarias/esp/esp-idf/components/esp_hw_support/include/soc/esp32/esp_crypto_lock.h:
+/Users/juliafarias/esp/esp-idf/components/esp_hw_support/include/esp_crypto_lock.h:
 
 /Users/juliafarias/esp/esp-idf/components/mbedtls/mbedtls/library/threading.c:
 
@@ -9329,6 +9325,10 @@ esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/version_features.c.obj
 /Users/juliafarias/esp/esp-idf/components/esp_common/include/esp_idf_version.h:
 
 /Users/juliafarias/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/cipher.h:
+
+/Users/juliafarias/esp/esp-idf/components/mbedtls/mbedtls/library/cmac.c:
+
+/Users/juliafarias/esp/esp-idf/components/soc/esp32/include/soc/dport_access.h:
 
 /Users/juliafarias/esp/esp-idf/components/esp_hw_support/include/esp_private/periph_ctrl.h:
 

@@ -37,8 +37,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/__idf_esp_hw_support.dir/port/esp32/esp_clk_tree.c.obj.d"
   "CMakeFiles/__idf_esp_hw_support.dir/port/esp32/esp_cpu_intr.c.obj"
   "CMakeFiles/__idf_esp_hw_support.dir/port/esp32/esp_cpu_intr.c.obj.d"
-  "CMakeFiles/__idf_esp_hw_support.dir/port/esp32/esp_crypto_lock.c.obj"
-  "CMakeFiles/__idf_esp_hw_support.dir/port/esp32/esp_crypto_lock.c.obj.d"
   "CMakeFiles/__idf_esp_hw_support.dir/port/esp32/io_mux.c.obj"
   "CMakeFiles/__idf_esp_hw_support.dir/port/esp32/io_mux.c.obj.d"
   "CMakeFiles/__idf_esp_hw_support.dir/port/esp32/rtc_clk.c.obj"

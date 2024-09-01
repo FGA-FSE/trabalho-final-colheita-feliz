@@ -106,6 +106,7 @@ esp-idf/all: esp-idf/esp_bootloader_format/all
 esp-idf/all: esp-idf/esp_app_format/all
 esp-idf/all: esp-idf/bootloader_support/all
 esp-idf/all: esp-idf/efuse/all
+esp-idf/all: esp-idf/esp_security/all
 esp-idf/all: esp-idf/esp_system/all
 esp-idf/all: esp-idf/esp_hw_support/all
 esp-idf/all: esp-idf/esp_common/all
@@ -129,6 +130,7 @@ esp-idf/preinstall: esp-idf/esp_bootloader_format/preinstall
 esp-idf/preinstall: esp-idf/esp_app_format/preinstall
 esp-idf/preinstall: esp-idf/bootloader_support/preinstall
 esp-idf/preinstall: esp-idf/efuse/preinstall
+esp-idf/preinstall: esp-idf/esp_security/preinstall
 esp-idf/preinstall: esp-idf/esp_system/preinstall
 esp-idf/preinstall: esp-idf/esp_hw_support/preinstall
 esp-idf/preinstall: esp-idf/esp_common/preinstall
@@ -152,6 +154,7 @@ esp-idf/clean: esp-idf/esp_bootloader_format/clean
 esp-idf/clean: esp-idf/esp_app_format/clean
 esp-idf/clean: esp-idf/bootloader_support/clean
 esp-idf/clean: esp-idf/efuse/clean
+esp-idf/clean: esp-idf/esp_security/clean
 esp-idf/clean: esp-idf/esp_system/clean
 esp-idf/clean: esp-idf/esp_hw_support/clean
 esp-idf/clean: esp-idf/esp_common/clean
@@ -325,6 +328,21 @@ esp-idf/esp_rom/preinstall:
 # Recursive "clean" directory target.
 esp-idf/esp_rom/clean: esp-idf/esp_rom/CMakeFiles/__idf_esp_rom.dir/clean
 .PHONY : esp-idf/esp_rom/clean
+
+#=============================================================================
+# Directory level rules for directory esp-idf/esp_security
+
+# Recursive "all" directory target.
+esp-idf/esp_security/all:
+.PHONY : esp-idf/esp_security/all
+
+# Recursive "preinstall" directory target.
+esp-idf/esp_security/preinstall:
+.PHONY : esp-idf/esp_security/preinstall
+
+# Recursive "clean" directory target.
+esp-idf/esp_security/clean:
+.PHONY : esp-idf/esp_security/clean
 
 #=============================================================================
 # Directory level rules for directory esp-idf/esp_system

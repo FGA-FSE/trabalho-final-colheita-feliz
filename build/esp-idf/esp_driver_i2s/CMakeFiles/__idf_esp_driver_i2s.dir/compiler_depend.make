@@ -100,6 +100,7 @@ esp-idf/esp_driver_i2s/CMakeFiles/__idf_esp_driver_i2s.dir/i2s_common.c.obj: /Us
   /Users/juliafarias/esp/esp-idf/components/hal/esp32/include/hal/gpio_ll.h \
   /Users/juliafarias/esp/esp-idf/components/hal/esp32/include/hal/i2s_ll.h \
   /Users/juliafarias/esp/esp-idf/components/hal/include/hal/adc_types.h \
+  /Users/juliafarias/esp/esp-idf/components/hal/include/hal/dma_types.h \
   /Users/juliafarias/esp/esp-idf/components/hal/include/hal/gpio_hal.h \
   /Users/juliafarias/esp/esp-idf/components/hal/include/hal/gpio_types.h \
   /Users/juliafarias/esp/esp-idf/components/hal/include/hal/hal_utils.h \
@@ -636,8 +637,6 @@ esp-idf/esp_driver_i2s/CMakeFiles/__idf_esp_driver_i2s.dir/i2s_std.c.obj: /Users
 
 /Users/juliafarias/esp/esp-idf/components/soc/esp32/include/soc/reg_base.h:
 
-/Users/juliafarias/esp/esp-idf/components/soc/esp32/include/soc/interrupts.h:
-
 /Users/juliafarias/esp/esp-idf/components/soc/esp32/include/soc/i2s_struct.h:
 
 /Users/juliafarias/esp/esp-idf/components/soc/esp32/include/soc/dport_reg.h:
@@ -665,6 +664,10 @@ esp-idf/esp_driver_i2s/CMakeFiles/__idf_esp_driver_i2s.dir/i2s_std.c.obj: /Users
 /Users/juliafarias/esp/esp-idf/components/hal/include/hal/gpio_types.h:
 
 /Users/juliafarias/esp/esp-idf/components/hal/include/hal/gpio_hal.h:
+
+/Users/juliafarias/esp/esp-idf/components/soc/esp32/include/soc/interrupts.h:
+
+/Users/juliafarias/esp/esp-idf/components/hal/include/hal/dma_types.h:
 
 /Users/juliafarias/esp/esp-idf/components/xtensa/esp32/include/xtensa/config/core-matmap.h:
 

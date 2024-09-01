@@ -17,6 +17,7 @@ $<TARGET_FILE:__idf_hal>
 $<TARGET_FILE:__idf_log>
 $<TARGET_FILE:__idf_heap>
 $<TARGET_FILE:__idf_soc>
+$<TARGET_FILE:__idf_esp_security>
 $<TARGET_FILE:__idf_esp_hw_support>
 $<TARGET_FILE:__idf_freertos>
 $<TARGET_FILE:__idf_newlib>
@@ -80,5 +81,5 @@ $<TARGET_FILE:__idf_perfmon>
 $<TARGET_FILE:__idf_rt>
 $<TARGET_FILE:__idf_spiffs>
 $<TARGET_FILE:__idf_wifi_provisioning>
-$<TARGET_FILE:__idf_main>
 $<TARGET_FILE:__idf_components>
+$<TARGET_FILE:__idf_main>

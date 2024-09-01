@@ -1103,6 +1103,16 @@
         "children": [],
         "depends_on": null,
         "help": null,
+        "id": "SOC_I2S_MAX_DATA_WIDTH",
+        "name": "SOC_I2S_MAX_DATA_WIDTH",
+        "range": null,
+        "title": null,
+        "type": "int"
+    },
+    {
+        "children": [],
+        "depends_on": null,
+        "help": null,
         "id": "SOC_I2S_TRANS_SIZE_ALIGN_WORD",
         "name": "SOC_I2S_TRANS_SIZE_ALIGN_WORD",
         "range": null,
@@ -2799,7 +2809,7 @@
                         "id": "BOOTLOADER_COMPILER_OPTIMIZATION_SIZE",
                         "name": "BOOTLOADER_COMPILER_OPTIMIZATION_SIZE",
                         "range": null,
-                        "title": "Size (-Os)",
+                        "title": "Size (-Os with GCC, -Oz with Clang)",
                         "type": "bool"
                     },
                     {
@@ -2834,7 +2844,7 @@
                     }
                 ],
                 "depends_on": null,
-                "help": "This option sets compiler optimization level (gcc -O argument)\nfor the bootloader.\n\n- The default \"Size\" setting will add the -0s flag to CFLAGS.\n- The \"Debug\" setting will add the -Og flag to CFLAGS.\n- The \"Performance\" setting will add the -O2 flag to CFLAGS.\n\nNote that custom optimization levels may be unsupported.",
+                "help": "This option sets compiler optimization level (gcc -O argument)\nfor the bootloader.\n\n- The default \"Size\" setting will add the -Os (-Oz with clang) flag to CFLAGS.\n- The \"Debug\" setting will add the -Og flag to CFLAGS.\n- The \"Performance\" setting will add the -O2 flag to CFLAGS.\n\nNote that custom optimization levels may be unsupported.",
                 "id": "bootloader-config-bootloader-optimization-level",
                 "name": "BOOTLOADER_COMPILER_OPTIMIZATION",
                 "title": "Bootloader optimization Level",
@@ -3735,6 +3745,16 @@
             },
             {
                 "children": [],
+                "depends_on": "SECURE_BOOT_V2_ENABLED",
+                "help": "If not set (default, recommended), on first boot the bootloader will burn the WR_DIS_RD_DIS\nefuse when Secure Boot is enabled. This prevents any more efuses from being read protected.\n\nIf this option is set, it will remain possible to write the EFUSE_RD_DIS efuse field after Secure\nBoot is enabled. This may allow an attacker to read-protect the BLK2 efuse (for ESP32) and\nBLOCK4-BLOCK10 (i.e. BLOCK_KEY0-BLOCK_KEY5)(for other chips) holding the secure boot public key digest,\ncausing an immediate denial of service and possibly allowing an additional fault injection attack to\nbypass the signature protection.\n\nThe option must be set when you need to program any read-protected key type into the efuses,\ne.g., HMAC, ECDSA etc. after secure boot has already been enabled on the device.\nPlease refer to secure boot V2 documentation guide for more details.\n\nNOTE: Once a BLOCK is read-protected, the application will read all zeros from that block\n\nNOTE: If \"UART ROM download mode (Permanently disabled (recommended))\" or\n\"UART ROM download mode (Permanently switch to Secure mode (recommended))\" is set,\nthen it is __NOT__ possible to read/write efuses using espefuse.py utility.\nHowever, efuse can be read/written from the application\n\nPlease refer to the Secure Boot V2 documentation guide for more information.",
+                "id": "SECURE_BOOT_V2_ALLOW_EFUSE_RD_DIS",
+                "name": "SECURE_BOOT_V2_ALLOW_EFUSE_RD_DIS",
+                "range": null,
+                "title": "Do not disable the ability to further read protect eFuses",
+                "type": "bool"
+            },
+            {
+                "children": [],
                 "depends_on": "SECURE_BOOT_V2_ENABLED && SECURE_BOOT_BUILD_SIGNED_BINARIES",
                 "help": "When Secure Boot V2 is enabled, by default the bootloader is not flashed along with other artifacts\nlike the application and the partition table images, i.e. bootloader has to be separately flashed\nusing the command `idf.py bootloader flash`, whereas, the application and partition table can be flashed\nusing the command `idf.py flash` itself.\nEnabling this option allows flashing the bootloader along with the other artifacts\nby invocation of the command `idf.py flash`.\n\nIf this option is enabled make sure that even the bootloader is signed using the correct secure boot key,\notherwise the bootloader signature verification would fail, as hash of the public key which is present in\nthe bootloader signature would not match with the digest stored into the efuses\nand thus the device will not be able to boot up.",
                 "id": "SECURE_BOOT_FLASH_BOOTLOADER_DEFAULT",
@@ -3904,16 +3924,6 @@
                         "name": "SECURE_BOOT_ALLOW_SHORT_APP_PARTITION",
                         "range": null,
                         "title": "Allow app partition length not 64KB aligned",
-                        "type": "bool"
-                    },
-                    {
-                        "children": [],
-                        "depends_on": "SECURE_BOOT_INSECURE && SECURE_BOOT_V2_ENABLED",
-                        "help": "If not set (default, recommended), on first boot the bootloader will burn the WR_DIS_RD_DIS\nefuse when Secure Boot is enabled. This prevents any more efuses from being read protected.\n\nIf this option is set, it will remain possible to write the EFUSE_RD_DIS efuse field after Secure\nBoot is enabled. This may allow an attacker to read-protect the BLK2 efuse (for ESP32) and\nBLOCK4-BLOCK10 (i.e. BLOCK_KEY0-BLOCK_KEY5)(for other chips) holding the public key digest, causing an\nimmediate denial of service and possibly allowing an additional fault injection attack to\nbypass the signature protection.\n\nNOTE: Once a BLOCK is read-protected, the application will read all zeros from that block\n\nNOTE: If \"UART ROM download mode (Permanently disabled (recommended))\" or\n\"UART ROM download mode (Permanently switch to Secure mode (recommended))\" is set,\nthen it is __NOT__ possible to read/write efuses using espefuse.py utility.\nHowever, efuse can be read/written from the application",
-                        "id": "SECURE_BOOT_V2_ALLOW_EFUSE_RD_DIS",
-                        "name": "SECURE_BOOT_V2_ALLOW_EFUSE_RD_DIS",
-                        "range": null,
-                        "title": "Allow additional read protecting of efuses",
                         "type": "bool"
                     },
                     {
@@ -4985,7 +4995,7 @@
                         "id": "COMPILER_OPTIMIZATION_SIZE",
                         "name": "COMPILER_OPTIMIZATION_SIZE",
                         "range": null,
-                        "title": "Optimize for size (-Os)",
+                        "title": "Optimize for size (-Os with GCC, -Oz with Clang)",
                         "type": "bool"
                     },
                     {
@@ -5010,7 +5020,7 @@
                     }
                 ],
                 "depends_on": null,
-                "help": "This option sets compiler optimization level (gcc -O argument) for the app.\n\n- The \"Debug\" setting will add the -0g flag to CFLAGS.\n- The \"Size\" setting will add the -0s flag to CFLAGS.\n- The \"Performance\" setting will add the -O2 flag to CFLAGS.\n- The \"None\" setting will add the -O0 flag to CFLAGS.\n\nThe \"Size\" setting cause the compiled code to be smaller and faster, but\nmay lead to difficulties of correlating code addresses to source file\nlines when debugging.\n\nThe \"Performance\" setting causes the compiled code to be larger and faster,\nbut will be easier to correlated code addresses to source file lines.\n\n\"None\" with -O0 produces compiled code without optimization.\n\nNote that custom optimization levels may be unsupported.\n\nCompiler optimization for the IDF bootloader is set separately,\nsee the BOOTLOADER_COMPILER_OPTIMIZATION setting.",
+                "help": "This option sets compiler optimization level (gcc -O argument) for the app.\n\n- The \"Debug\" setting will add the -Og flag to CFLAGS.\n- The \"Size\" setting will add the -Os flag to CFLAGS (-Oz with Clang).\n- The \"Performance\" setting will add the -O2 flag to CFLAGS.\n- The \"None\" setting will add the -O0 flag to CFLAGS.\n\nThe \"Size\" setting cause the compiled code to be smaller and faster, but\nmay lead to difficulties of correlating code addresses to source file\nlines when debugging.\n\nThe \"Performance\" setting causes the compiled code to be larger and faster,\nbut will be easier to correlated code addresses to source file lines.\n\n\"None\" with -O0 produces compiled code without optimization.\n\nNote that custom optimization levels may be unsupported.\n\nCompiler optimization for the IDF bootloader is set separately,\nsee the BOOTLOADER_COMPILER_OPTIMIZATION setting.",
                 "id": "compiler-options-optimization-level",
                 "name": "COMPILER_OPTIMIZATION",
                 "title": "Optimization Level",
@@ -5055,6 +5065,16 @@
                 "name": "COMPILER_OPTIMIZATION_ASSERTION_LEVEL",
                 "title": "Assertion level",
                 "type": "choice"
+            },
+            {
+                "children": [],
+                "depends_on": null,
+                "help": "When NDEBUG is set, assert(X) will not cause code to trigger an assertion.\nWith this option set, assert(X) will still evaluate the expression X, though\nthe result will never cause an assertion. This means that if X is a function\nthen the function will be called.\n\nThis is not according to the standard, which states that the assert(X) should\nbe replaced with ((void)0) if NDEBUG is defined.\n\nIn ESP-IDF v6.0 the default behavior will change to \"no\" to be in line with the\nstandard.",
+                "id": "COMPILER_ASSERT_NDEBUG_EVALUATE",
+                "name": "COMPILER_ASSERT_NDEBUG_EVALUATE",
+                "range": null,
+                "title": "Enable the evaluation of the expression inside assert(X) when NDEBUG is set",
+                "type": "bool"
             },
             {
                 "children": [
@@ -15153,6 +15173,26 @@
                             },
                             {
                                 "children": [],
+                                "depends_on": null,
+                                "help": "Required minimum eFuse Block revision. ESP-IDF will check it at the 2nd bootloader stage\nwhether the current image can work correctly for this eFuse Block revision.\nSo that to avoid running an incompatible image on a SoC that contains breaking change in the eFuse Block.\nIf you want to update this value to run the image that not compatible with the current eFuse Block revision,\nplease contact to Espressif's business team for details:\nhttps://www.espressif.com.cn/en/contact-us/sales-questions",
+                                "id": "ESP_EFUSE_BLOCK_REV_MIN_FULL",
+                                "name": "ESP_EFUSE_BLOCK_REV_MIN_FULL",
+                                "range": null,
+                                "title": "Minimum Supported ESP32 eFuse Block Revision",
+                                "type": "int"
+                            },
+                            {
+                                "children": [],
+                                "depends_on": null,
+                                "help": null,
+                                "id": "ESP_EFUSE_BLOCK_REV_MAX_FULL",
+                                "name": "ESP_EFUSE_BLOCK_REV_MAX_FULL",
+                                "range": null,
+                                "title": null,
+                                "type": "int"
+                            },
+                            {
+                                "children": [],
                                 "depends_on": "IDF_CI_BUILD",
                                 "help": "For internal chip testing, a small number of new versions chips didn't\nupdate the version field in eFuse, you can enable this option to force the\nsoftware recognize the chip version based on the rev selected in menuconfig.",
                                 "id": "ESP_REV_NEW_CHIP_TEST",
@@ -15380,7 +15420,7 @@
                             {
                                 "children": [],
                                 "depends_on": null,
-                                "help": "esp32c2, esp32c3, esp32s3, esp32c6 and esp32h2 will reset at wake-up if GPIO is received\na small electrostatic pulse during light sleep, with specific condition\n\n- GPIO needs to be configured as input-mode only\n- The pin receives a small electrostatic pulse, and reset occurs when the pulse\n  voltage is higher than 6 V\n\nFor GPIO set to input mode only, it is not a good practice to leave it open/floating,\nThe hardware design needs to controlled it with determined supply or ground voltage\nis necessary.\n\nThis option provides a software workaround for this issue. Configure to isolate all\nGPIO pins in sleep state.",
+                                "help": "esp32c2, esp32c3, esp32s3, esp32c5, esp32c6 and esp32h2 will reset at wake-up if GPIO is received\na small electrostatic pulse during light sleep, with specific condition\n\n- GPIO needs to be configured as input-mode only\n- The pin receives a small electrostatic pulse, and reset occurs when the pulse\n  voltage is higher than 6 V\n\nFor GPIO set to input mode only, it is not a good practice to leave it open/floating,\nThe hardware design needs to controlled it with determined supply or ground voltage\nis necessary.\n\nThis option provides a software workaround for this issue. Configure to isolate all\nGPIO pins in sleep state.",
                                 "id": "ESP_SLEEP_GPIO_RESET_WORKAROUND",
                                 "name": "ESP_SLEEP_GPIO_RESET_WORKAROUND",
                                 "range": null,
@@ -15796,75 +15836,6 @@
                         "type": "menu"
                     },
                     {
-                        "children": [
-                            {
-                                "children": [
-                                    {
-                                        "children": [
-                                            {
-                                                "children": [],
-                                                "depends_on": "<choice ESP_CRYPTO_DPA_PROTECTION_LEVEL>",
-                                                "help": null,
-                                                "id": "ESP_CRYPTO_DPA_PROTECTION_LEVEL_LOW",
-                                                "name": "ESP_CRYPTO_DPA_PROTECTION_LEVEL_LOW",
-                                                "range": null,
-                                                "title": "Security level low",
-                                                "type": "bool"
-                                            },
-                                            {
-                                                "children": [],
-                                                "depends_on": "<choice ESP_CRYPTO_DPA_PROTECTION_LEVEL>",
-                                                "help": null,
-                                                "id": "ESP_CRYPTO_DPA_PROTECTION_LEVEL_MEDIUM",
-                                                "name": "ESP_CRYPTO_DPA_PROTECTION_LEVEL_MEDIUM",
-                                                "range": null,
-                                                "title": "Security level medium",
-                                                "type": "bool"
-                                            },
-                                            {
-                                                "children": [],
-                                                "depends_on": "<choice ESP_CRYPTO_DPA_PROTECTION_LEVEL>",
-                                                "help": null,
-                                                "id": "ESP_CRYPTO_DPA_PROTECTION_LEVEL_HIGH",
-                                                "name": "ESP_CRYPTO_DPA_PROTECTION_LEVEL_HIGH",
-                                                "range": null,
-                                                "title": "Security level high",
-                                                "type": "bool"
-                                            }
-                                        ],
-                                        "depends_on": "ESP_CRYPTO_DPA_PROTECTION_AT_STARTUP && SOC_CRYPTO_DPA_PROTECTION_SUPPORTED",
-                                        "help": "Configure the DPA protection security level",
-                                        "id": "component-config-hardware-settings-crypto-dpa-protection-enable-crypto-dpa-protection-at-startup-dpa-protection-level",
-                                        "name": "ESP_CRYPTO_DPA_PROTECTION_LEVEL",
-                                        "title": "DPA protection level",
-                                        "type": "choice"
-                                    }
-                                ],
-                                "depends_on": "SOC_CRYPTO_DPA_PROTECTION_SUPPORTED",
-                                "help": "This config controls the DPA (Differential Power Analysis) protection\nknob for the crypto peripherals. DPA protection dynamically adjusts the\nclock frequency of the crypto peripheral. DPA protection helps to make it\ndifficult to perform SCA attacks on the crypto peripherals. However,\nthere is also associated performance impact based on the security level\nset. Please refer to the TRM for more details.",
-                                "id": "ESP_CRYPTO_DPA_PROTECTION_AT_STARTUP",
-                                "name": "ESP_CRYPTO_DPA_PROTECTION_AT_STARTUP",
-                                "range": null,
-                                "title": "Enable crypto DPA protection at startup",
-                                "type": "bool"
-                            },
-                            {
-                                "children": [],
-                                "depends_on": "SOC_CRYPTO_DPA_PROTECTION_SUPPORTED",
-                                "help": null,
-                                "id": "ESP_CRYPTO_DPA_PROTECTION_LEVEL",
-                                "name": "ESP_CRYPTO_DPA_PROTECTION_LEVEL",
-                                "range": null,
-                                "title": null,
-                                "type": "int"
-                            }
-                        ],
-                        "depends_on": "SOC_CRYPTO_DPA_PROTECTION_SUPPORTED",
-                        "id": "component-config-hardware-settings-crypto-dpa-protection",
-                        "title": "Crypto DPA Protection",
-                        "type": "menu"
-                    },
-                    {
                         "children": [],
                         "depends_on": null,
                         "help": "This option is only used for new chip bringup, when\nclock support isn't done yet. So with this option,\nwe use xtal on FPGA as the clock source.",
@@ -15914,16 +15885,6 @@
                 "children": [
                     {
                         "children": [
-                            {
-                                "children": [],
-                                "depends_on": "SOC_LCD_I80_SUPPORTED",
-                                "help": "LCD driver allocates an internal buffer to transform the data into a proper format, because of\nthe endian order mismatch. This option is to set the size of the buffer, in bytes.",
-                                "id": "LCD_PANEL_IO_FORMAT_BUF_SIZE",
-                                "name": "LCD_PANEL_IO_FORMAT_BUF_SIZE",
-                                "range": null,
-                                "title": "LCD panel io format buffer size",
-                                "type": "int"
-                            },
                             {
                                 "children": [],
                                 "depends_on": null,
@@ -16021,6 +15982,16 @@
                         "type": "int"
                     },
                     {
+                        "children": [],
+                        "depends_on": null,
+                        "help": "No implementation of ESP-NETIF functions is provided.\nThis option is used for adding a custom TCP/IP stack and defining related\nesp_netif functionality",
+                        "id": "ESP_NETIF_PROVIDE_CUSTOM_IMPLEMENTATION",
+                        "name": "ESP_NETIF_PROVIDE_CUSTOM_IMPLEMENTATION",
+                        "range": null,
+                        "title": "Use only ESP-NETIF headers",
+                        "type": "bool"
+                    },
+                    {
                         "children": [
                             {
                                 "children": [],
@@ -16043,7 +16014,7 @@
                                 "type": "bool"
                             }
                         ],
-                        "depends_on": null,
+                        "depends_on": "!ESP_NETIF_PROVIDE_CUSTOM_IMPLEMENTATION",
                         "help": "Choose the TCP/IP Stack to work, for example, LwIP, uIP, etc.",
                         "id": "component-config-esp-netif-adapter-tcp-ip-stack-library",
                         "name": "ESP_NETIF_USE_TCPIP_STACK_LIB",
@@ -16424,7 +16395,7 @@
                     },
                     {
                         "children": [],
-                        "depends_on": "FREERTOS_USE_TICKLESS_IDLE",
+                        "depends_on": "SOC_LIGHT_SLEEP_SUPPORTED",
                         "help": "If enabled, about 2.1KB of lightsleep related source code would be in IRAM and chip would sleep\nlonger for 310us at 160MHz CPU frequency most each time.\nThis feature is intended to be used when lower power consumption is needed\nwhile there is enough place in IRAM to place source code.",
                         "id": "PM_SLP_IRAM_OPT",
                         "name": "PM_SLP_IRAM_OPT",
@@ -16650,7 +16621,7 @@
                                             {
                                                 "children": [],
                                                 "depends_on": "SPIRAM_BOOT_INIT && !SPIRAM_ALLOW_BSS_SEG_EXTERNAL_MEMORY && !SPIRAM_ALLOW_NOINIT_SEG_EXTERNAL_MEMORY && SPIRAM && !APP_BUILD_TYPE_PURE_RAM_APP",
-                                                "help": "Normally, if psram initialization is enabled during compile time but not found at runtime, it\nis seen as an error making the CPU panic. If this is enabled, booting will complete\nbut no PSRAM will be available. If PSRAM failed to initialize, the following configs may be affected\nand may need to be corrected manually. SPIRAM_TRY_ALLOCATE_WIFI_LWIP will affect some LWIP and WiFi buffer\ndefault values and range values. Enable SPIRAM_TRY_ALLOCATE_WIFI_LWIP, ESP_WIFI_AMSDU_TX_ENABLED,\nESP_WIFI_CACHE_TX_BUFFER_NUM and use static WiFi Tx buffer may cause potential memory exhaustion issues.\nSuggest disable SPIRAM_TRY_ALLOCATE_WIFI_LWIP.\nSuggest disable ESP_WIFI_AMSDU_TX_ENABLED.\nSuggest disable ESP_WIFI_CACHE_TX_BUFFER_NUM, need clear CONFIG_FEATURE_CACHE_TX_BUF_BIT of config->feature_caps.\nSuggest change ESP_WIFI_TX_BUFFER from static to dynamic. Also suggest to adjust some buffer numbers to the\nvalues used without PSRAM case. Such as, ESP_WIFI_STATIC_TX_BUFFER_NUM, ESP_WIFI_DYNAMIC_TX_BUFFER_NUM.",
+                                                "help": "Normally, if psram initialization is enabled during compile time but not found at runtime, it\nis seen as an error making the CPU panic. If this is enabled, booting will complete\nbut no PSRAM will be available. If PSRAM failed to initialize, the following configs may be affected\nand may need to be corrected manually. SPIRAM_TRY_ALLOCATE_WIFI_LWIP will affect some LWIP and WiFi buffer\ndefault values and range values. Enable SPIRAM_TRY_ALLOCATE_WIFI_LWIP, ESP_WIFI_AMSDU_TX_ENABLED,\nESP_WIFI_CACHE_TX_BUFFER_NUM and use static WiFi Tx buffer may cause potential memory exhaustion issues.\nSuggest disable SPIRAM_TRY_ALLOCATE_WIFI_LWIP.\nSuggest disable ESP_WIFI_AMSDU_TX_ENABLED.\nSuggest disable ESP_WIFI_CACHE_TX_BUFFER_NUM,\nneed clear CONFIG_FEATURE_CACHE_TX_BUF_BIT of config->feature_caps.\nSuggest change ESP_WIFI_TX_BUFFER from static to dynamic. Also suggest to adjust some buffer numbers to the\nvalues used without PSRAM case. Such as, ESP_WIFI_STATIC_TX_BUFFER_NUM, ESP_WIFI_DYNAMIC_TX_BUFFER_NUM.",
                                                 "id": "SPIRAM_IGNORE_NOTFOUND",
                                                 "name": "SPIRAM_IGNORE_NOTFOUND",
                                                 "range": null,
@@ -16758,7 +16729,7 @@
                                     },
                                     {
                                         "children": [],
-                                        "depends_on": "SPIRAM && IDF_TARGET_ESP32 && SPIRAM && !APP_BUILD_TYPE_PURE_RAM_APP",
+                                        "depends_on": "SPIRAM && SPIRAM && !APP_BUILD_TYPE_PURE_RAM_APP",
                                         "help": "If enabled, noinit variables can be placed in PSRAM using EXT_RAM_NOINIT_ATTR.\n\nNote the values placed into this section will not be initialized at startup and should keep its value\nafter software restart.",
                                         "id": "SPIRAM_ALLOW_NOINIT_SEG_EXTERNAL_MEMORY",
                                         "name": "SPIRAM_ALLOW_NOINIT_SEG_EXTERNAL_MEMORY",
@@ -17185,6 +17156,83 @@
                 "depends_on": null,
                 "id": "component-config-esp-ringbuf",
                 "title": "ESP Ringbuf",
+                "type": "menu"
+            },
+            {
+                "children": [
+                    {
+                        "children": [
+                            {
+                                "children": [
+                                    {
+                                        "children": [
+                                            {
+                                                "children": [],
+                                                "depends_on": "<choice ESP_CRYPTO_DPA_PROTECTION_LEVEL>",
+                                                "help": null,
+                                                "id": "ESP_CRYPTO_DPA_PROTECTION_LEVEL_LOW",
+                                                "name": "ESP_CRYPTO_DPA_PROTECTION_LEVEL_LOW",
+                                                "range": null,
+                                                "title": "Security level low",
+                                                "type": "bool"
+                                            },
+                                            {
+                                                "children": [],
+                                                "depends_on": "<choice ESP_CRYPTO_DPA_PROTECTION_LEVEL>",
+                                                "help": null,
+                                                "id": "ESP_CRYPTO_DPA_PROTECTION_LEVEL_MEDIUM",
+                                                "name": "ESP_CRYPTO_DPA_PROTECTION_LEVEL_MEDIUM",
+                                                "range": null,
+                                                "title": "Security level medium",
+                                                "type": "bool"
+                                            },
+                                            {
+                                                "children": [],
+                                                "depends_on": "<choice ESP_CRYPTO_DPA_PROTECTION_LEVEL>",
+                                                "help": null,
+                                                "id": "ESP_CRYPTO_DPA_PROTECTION_LEVEL_HIGH",
+                                                "name": "ESP_CRYPTO_DPA_PROTECTION_LEVEL_HIGH",
+                                                "range": null,
+                                                "title": "Security level high",
+                                                "type": "bool"
+                                            }
+                                        ],
+                                        "depends_on": "ESP_CRYPTO_DPA_PROTECTION_AT_STARTUP && SOC_CRYPTO_DPA_PROTECTION_SUPPORTED",
+                                        "help": "Configure the DPA protection security level",
+                                        "id": "component-config-esp-security-specific-crypto-dpa-protection-enable-crypto-dpa-protection-at-startup-dpa-protection-level",
+                                        "name": "ESP_CRYPTO_DPA_PROTECTION_LEVEL",
+                                        "title": "DPA protection level",
+                                        "type": "choice"
+                                    }
+                                ],
+                                "depends_on": "SOC_CRYPTO_DPA_PROTECTION_SUPPORTED",
+                                "help": "This config controls the DPA (Differential Power Analysis) protection\nknob for the crypto peripherals. DPA protection dynamically adjusts\nclock frequency of the crypto peripheral. DPA protection helps to make it\ndifficult to perform SCA attacks on the crypto peripherals. However,\nthere is also associated performance impact based on the security level\nset. Please refer to the TRM for more details.",
+                                "id": "ESP_CRYPTO_DPA_PROTECTION_AT_STARTUP",
+                                "name": "ESP_CRYPTO_DPA_PROTECTION_AT_STARTUP",
+                                "range": null,
+                                "title": "Enable crypto DPA protection at startup",
+                                "type": "bool"
+                            },
+                            {
+                                "children": [],
+                                "depends_on": "SOC_CRYPTO_DPA_PROTECTION_SUPPORTED",
+                                "help": null,
+                                "id": "ESP_CRYPTO_DPA_PROTECTION_LEVEL",
+                                "name": "ESP_CRYPTO_DPA_PROTECTION_LEVEL",
+                                "range": null,
+                                "title": null,
+                                "type": "int"
+                            }
+                        ],
+                        "depends_on": "SOC_CRYPTO_DPA_PROTECTION_SUPPORTED",
+                        "id": "component-config-esp-security-specific-crypto-dpa-protection",
+                        "title": "Crypto DPA Protection",
+                        "type": "menu"
+                    }
+                ],
+                "depends_on": null,
+                "id": "component-config-esp-security-specific",
+                "title": "ESP Security Specific",
                 "type": "menu"
             },
             {
@@ -18799,7 +18847,7 @@
                     {
                         "children": [],
                         "depends_on": "ESP_WIFI_ENABLED || ESP_HOST_WIFI_ENABLED",
-                        "help": "Set the number of WiFi management short buffer.",
+                        "help": "Set the maximum number of Wi-Fi management short buffers. These buffers are dynamically allocated,\nwith their size determined by the length of the management packet to be sent. When a management\npacket is less than 64 bytes, the Wi-Fi driver classifies it as a short management packet and\nassigns it to one of these buffers.",
                         "id": "ESP_WIFI_MGMT_SBUF_NUM",
                         "name": "ESP_WIFI_MGMT_SBUF_NUM",
                         "range": [
@@ -20950,7 +20998,7 @@
                             },
                             {
                                 "children": [],
-                                "depends_on": "IDF_TARGET_ESP32",
+                                "depends_on": "SOC_CPU_HAS_FPU && (IDF_TARGET_ESP32 || IDF_TARGET_ESP32S3)",
                                 "help": "When enabled, the usage of float type is allowed inside Level 1 ISRs. Note that usage of float types in\nhigher level interrupts is still not permitted.",
                                 "id": "FREERTOS_FPU_IN_ISR",
                                 "name": "FREERTOS_FPU_IN_ISR",
@@ -23278,6 +23326,36 @@
                         "type": "int"
                     },
                     {
+                        "children": [],
+                        "depends_on": "LWIP_IPV6",
+                        "help": "Maximum number of entries in IPv6 on-link prefixes cache",
+                        "id": "LWIP_IPV6_ND6_NUM_PREFIXES",
+                        "name": "LWIP_IPV6_ND6_NUM_PREFIXES",
+                        "range": null,
+                        "title": "Max number of entries in IPv6 on-link prefixes cache",
+                        "type": "int"
+                    },
+                    {
+                        "children": [],
+                        "depends_on": "LWIP_IPV6",
+                        "help": "Maximum number of entries in IPv6 default routers cache",
+                        "id": "LWIP_IPV6_ND6_NUM_ROUTERS",
+                        "name": "LWIP_IPV6_ND6_NUM_ROUTERS",
+                        "range": null,
+                        "title": "Max number of entries in IPv6 default routers cache",
+                        "type": "int"
+                    },
+                    {
+                        "children": [],
+                        "depends_on": "LWIP_IPV6",
+                        "help": "Maximum number of entries in IPv6 destinations cache",
+                        "id": "LWIP_IPV6_ND6_NUM_DESTINATIONS",
+                        "name": "LWIP_IPV6_ND6_NUM_DESTINATIONS",
+                        "range": null,
+                        "title": "Max number of entries in IPv6 destinations cache",
+                        "type": "int"
+                    },
+                    {
                         "children": [
                             {
                                 "children": [],
@@ -25322,7 +25400,28 @@
                         "type": "menu"
                     },
                     {
-                        "children": [],
+                        "children": [
+                            {
+                                "children": [],
+                                "depends_on": "MBEDTLS_ECP_C",
+                                "help": "Enhance support for reading EC keys using variants of SEC1 not allowed by\nRFC 5915 and RFC 5480.",
+                                "id": "MBEDTLS_PK_PARSE_EC_EXTENDED",
+                                "name": "MBEDTLS_PK_PARSE_EC_EXTENDED",
+                                "range": null,
+                                "title": "Enhance support for reading EC keys",
+                                "type": "bool"
+                            },
+                            {
+                                "children": [],
+                                "depends_on": "MBEDTLS_ECP_C",
+                                "help": "Enable the support for parsing public keys of type Short Weierstrass\n(MBEDTLS_ECP_DP_SECP_XXX and MBEDTLS_ECP_DP_BP_XXX) which are using the\ncompressed point format. This parsing is done through ECP module's functions.",
+                                "id": "MBEDTLS_PK_PARSE_EC_COMPRESSED",
+                                "name": "MBEDTLS_PK_PARSE_EC_COMPRESSED",
+                                "range": null,
+                                "title": "Enable the support for parsing public keys of type Short Weierstrass",
+                                "type": "bool"
+                            }
+                        ],
                         "depends_on": null,
                         "help": null,
                         "id": "MBEDTLS_ECP_C",

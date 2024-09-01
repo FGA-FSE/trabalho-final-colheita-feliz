@@ -1,15 +1,15 @@
 esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/Users/juliafarias/esp/esp-idf/components/mbedtls/port/bignum/bignum_alt.c.obj: \
  /Users/juliafarias/esp/esp-idf/components/mbedtls/port/bignum/bignum_alt.c \
- /Users/juliafarias/esp/esp-idf/components/esp_hw_support/include/soc/esp32/esp_crypto_lock.h \
+ /Users/juliafarias/esp/esp-idf/components/esp_hw_support/include/esp_crypto_lock.h \
+ /Users/juliafarias/esp/esp-idf/components/soc/esp32/include/soc/soc_caps.h \
+ /Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/build/config/sdkconfig.h \
  /Users/juliafarias/esp/esp-idf/components/mbedtls/port/include/bignum_impl.h \
  /Users/juliafarias/esp/esp-idf/components/mbedtls/port/include/mbedtls/bignum.h \
  /Users/juliafarias/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/bignum.h \
  /Users/juliafarias/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/private_access.h \
  /Users/juliafarias/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/build_info.h \
  /Users/juliafarias/esp/esp-idf/components/mbedtls/port/include/mbedtls/esp_config.h \
- /Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/build/config/sdkconfig.h \
  /Users/juliafarias/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/mbedtls_config.h \
- /Users/juliafarias/esp/esp-idf/components/soc/esp32/include/soc/soc_caps.h \
  /Users/juliafarias/esp/esp-idf/components/mbedtls/port/include/esp_mem.h \
  /Users/juliafarias/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/xtensa-esp-elf/include/stdlib.h \
  /Users/juliafarias/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/xtensa-esp-elf/include/machine/ieeefp.h \

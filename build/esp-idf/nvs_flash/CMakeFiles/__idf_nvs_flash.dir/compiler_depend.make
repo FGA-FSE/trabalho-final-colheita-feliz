@@ -2757,12 +2757,15 @@ esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_types.cpp.obj: /Users/j
   /Users/juliafarias/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/xtensa-esp-elf/include/c++/13.2.0/bits/cxxabi_forced.h \
   /Users/juliafarias/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/xtensa-esp-elf/include/c++/13.2.0/bits/cxxabi_init_exception.h \
   /Users/juliafarias/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/xtensa-esp-elf/include/c++/13.2.0/bits/enable_special_members.h \
+  /Users/juliafarias/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/xtensa-esp-elf/include/c++/13.2.0/bits/erase_if.h \
   /Users/juliafarias/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/xtensa-esp-elf/include/c++/13.2.0/bits/exception.h \
   /Users/juliafarias/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/xtensa-esp-elf/include/c++/13.2.0/bits/exception_defines.h \
   /Users/juliafarias/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/xtensa-esp-elf/include/c++/13.2.0/bits/exception_ptr.h \
   /Users/juliafarias/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/xtensa-esp-elf/include/c++/13.2.0/bits/functexcept.h \
   /Users/juliafarias/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/xtensa-esp-elf/include/c++/13.2.0/bits/functional_hash.h \
   /Users/juliafarias/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/xtensa-esp-elf/include/c++/13.2.0/bits/hash_bytes.h \
+  /Users/juliafarias/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/xtensa-esp-elf/include/c++/13.2.0/bits/hashtable.h \
+  /Users/juliafarias/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/xtensa-esp-elf/include/c++/13.2.0/bits/hashtable_policy.h \
   /Users/juliafarias/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/xtensa-esp-elf/include/c++/13.2.0/bits/invoke.h \
   /Users/juliafarias/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/xtensa-esp-elf/include/c++/13.2.0/bits/ios_base.h \
   /Users/juliafarias/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/xtensa-esp-elf/include/c++/13.2.0/bits/iterator_concepts.h \
@@ -2777,6 +2780,7 @@ esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_types.cpp.obj: /Users/j
   /Users/juliafarias/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/xtensa-esp-elf/include/c++/13.2.0/bits/move.h \
   /Users/juliafarias/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/xtensa-esp-elf/include/c++/13.2.0/bits/nested_exception.h \
   /Users/juliafarias/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/xtensa-esp-elf/include/c++/13.2.0/bits/new_allocator.h \
+  /Users/juliafarias/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/xtensa-esp-elf/include/c++/13.2.0/bits/node_handle.h \
   /Users/juliafarias/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/xtensa-esp-elf/include/c++/13.2.0/bits/ostream.tcc \
   /Users/juliafarias/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/xtensa-esp-elf/include/c++/13.2.0/bits/ostream_insert.h \
   /Users/juliafarias/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/xtensa-esp-elf/include/c++/13.2.0/bits/postypes.h \
@@ -2814,6 +2818,7 @@ esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_types.cpp.obj: /Users/j
   /Users/juliafarias/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/xtensa-esp-elf/include/c++/13.2.0/bits/stringfwd.h \
   /Users/juliafarias/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/xtensa-esp-elf/include/c++/13.2.0/bits/uniform_int_dist.h \
   /Users/juliafarias/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/xtensa-esp-elf/include/c++/13.2.0/bits/unique_ptr.h \
+  /Users/juliafarias/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/xtensa-esp-elf/include/c++/13.2.0/bits/unordered_map.h \
   /Users/juliafarias/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/xtensa-esp-elf/include/c++/13.2.0/bits/uses_allocator.h \
   /Users/juliafarias/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/xtensa-esp-elf/include/c++/13.2.0/bits/uses_allocator_args.h \
   /Users/juliafarias/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/xtensa-esp-elf/include/c++/13.2.0/bits/utility.h \
@@ -2861,6 +2866,7 @@ esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_types.cpp.obj: /Users/j
   /Users/juliafarias/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/xtensa-esp-elf/include/c++/13.2.0/tuple \
   /Users/juliafarias/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/xtensa-esp-elf/include/c++/13.2.0/type_traits \
   /Users/juliafarias/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/xtensa-esp-elf/include/c++/13.2.0/typeinfo \
+  /Users/juliafarias/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/xtensa-esp-elf/include/c++/13.2.0/unordered_map \
   /Users/juliafarias/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/xtensa-esp-elf/include/c++/13.2.0/xtensa-esp-elf/esp32/no-rtti/bits/atomic_word.h \
   /Users/juliafarias/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/xtensa-esp-elf/include/c++/13.2.0/xtensa-esp-elf/esp32/no-rtti/bits/c++allocator.h \
   /Users/juliafarias/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/xtensa-esp-elf/include/c++/13.2.0/xtensa-esp-elf/esp32/no-rtti/bits/c++config.h \
@@ -2874,6 +2880,7 @@ esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_types.cpp.obj: /Users/j
   /Users/juliafarias/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/xtensa-esp-elf/include/c++/13.2.0/xtensa-esp-elf/esp32/no-rtti/bits/os_defines.h \
   /Users/juliafarias/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/xtensa-esp-elf/include/ctype.h \
   /Users/juliafarias/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/xtensa-esp-elf/include/errno.h \
+  /Users/juliafarias/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/xtensa-esp-elf/include/inttypes.h \
   /Users/juliafarias/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/xtensa-esp-elf/include/locale.h \
   /Users/juliafarias/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/xtensa-esp-elf/include/machine/_default_types.h \
   /Users/juliafarias/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/xtensa-esp-elf/include/machine/_endian.h \
@@ -2925,6 +2932,14 @@ esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_types.cpp.obj: /Users/j
   /Users/juliafarias/esp/esp-idf/components/esp_common/include/esp_compiler.h \
   /Users/juliafarias/esp/esp-idf/components/esp_common/include/esp_err.h \
   /Users/juliafarias/esp/esp-idf/components/esp_rom/include/esp_rom_crc.h \
+  /Users/juliafarias/esp/esp-idf/components/esp_rom/include/esp_rom_sys.h \
+  /Users/juliafarias/esp/esp-idf/components/heap/include/esp_heap_caps.h \
+  /Users/juliafarias/esp/esp-idf/components/heap/include/multi_heap.h \
+  /Users/juliafarias/esp/esp-idf/components/log/include/esp_log.h \
+  /Users/juliafarias/esp/esp-idf/components/log/include/esp_log_buffer.h \
+  /Users/juliafarias/esp/esp-idf/components/log/include/esp_log_color.h \
+  /Users/juliafarias/esp/esp-idf/components/log/include/esp_log_level.h \
+  /Users/juliafarias/esp/esp-idf/components/log/include/esp_log_timestamp.h \
   /Users/juliafarias/esp/esp-idf/components/newlib/platform_include/assert.h \
   /Users/juliafarias/esp/esp-idf/components/newlib/platform_include/errno.h \
   /Users/juliafarias/esp/esp-idf/components/newlib/platform_include/pthread.h \
@@ -2938,7 +2953,15 @@ esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_types.cpp.obj: /Users/j
   /Users/juliafarias/esp/esp-idf/components/nvs_flash/include/nvs_handle.hpp \
   /Users/juliafarias/esp/esp-idf/components/nvs_flash/private_include/nvs_internal.h \
   /Users/juliafarias/esp/esp-idf/components/nvs_flash/src/compressed_enum_table.hpp \
-  /Users/juliafarias/esp/esp-idf/components/nvs_flash/src/nvs_types.hpp
+  /Users/juliafarias/esp/esp-idf/components/nvs_flash/src/intrusive_list.h \
+  /Users/juliafarias/esp/esp-idf/components/nvs_flash/src/nvs_item_hash_list.hpp \
+  /Users/juliafarias/esp/esp-idf/components/nvs_flash/src/nvs_memory_management.hpp \
+  /Users/juliafarias/esp/esp-idf/components/nvs_flash/src/nvs_page.hpp \
+  /Users/juliafarias/esp/esp-idf/components/nvs_flash/src/nvs_types.hpp \
+  /Users/juliafarias/esp/esp-idf/components/nvs_flash/src/partition.hpp \
+  /Users/juliafarias/esp/esp-idf/components/soc/esp32/include/soc/reset_reasons.h \
+  /Users/juliafarias/esp/esp-idf/components/spi_flash/include/esp_spi_flash_counters.h \
+  /Users/juliafarias/esp/esp-idf/components/spi_flash/include/spi_flash_mmap.h
 
 
 /Users/juliafarias/esp/esp-idf/components/nvs_flash/src/nvs_platform.cpp:

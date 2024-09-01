@@ -17,6 +17,7 @@
 /Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/build/esp-idf/log/liblog.a
 /Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/build/esp-idf/heap/libheap.a
 /Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/build/esp-idf/soc/libsoc.a
+/Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/build/esp-idf/esp_security/libesp_security.a
 /Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/build/esp-idf/esp_hw_support/libesp_hw_support.a
 /Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/build/esp-idf/freertos/libfreertos.a
 /Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/build/esp-idf/newlib/libnewlib.a
@@ -80,5 +81,5 @@
 /Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/build/esp-idf/rt/librt.a
 /Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/build/esp-idf/spiffs/libspiffs.a
 /Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/build/esp-idf/wifi_provisioning/libwifi_provisioning.a
-/Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/build/esp-idf/main/libmain.a
 /Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/build/esp-idf/components/libcomponents.a
+/Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/build/esp-idf/main/libmain.a

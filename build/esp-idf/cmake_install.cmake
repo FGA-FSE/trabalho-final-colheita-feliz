@@ -149,6 +149,11 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
+  include("/Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/build/esp-idf/esp_security/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
   include("/Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/build/esp-idf/esp_hw_support/cmake_install.cmake")
 endif()
 
@@ -544,11 +549,11 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/build/esp-idf/main/cmake_install.cmake")
+  include("/Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/build/esp-idf/components/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/build/esp-idf/components/cmake_install.cmake")
+  include("/Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/build/esp-idf/main/cmake_install.cmake")
 endif()
 

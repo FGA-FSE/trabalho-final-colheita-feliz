@@ -139,6 +139,7 @@ esp-idf/pthread/CMakeFiles/__idf_pthread.dir/pthread.c.obj: \
  /Users/juliafarias/esp/esp-idf/components/heap/include/heap_memory_layout.h \
  /Users/juliafarias/esp/esp-idf/components/pthread/pthread_internal.h \
  /Users/juliafarias/esp/esp-idf/components/pthread/include/esp_pthread.h \
+ /Users/juliafarias/esp/esp-idf/components/esp_common/include/esp_check.h \
  /Users/juliafarias/esp/esp-idf/components/log/include/esp_log.h \
  /Users/juliafarias/esp/esp-idf/components/log/include/esp_log_level.h \
  /Users/juliafarias/esp/esp-idf/components/log/include/esp_log_color.h \

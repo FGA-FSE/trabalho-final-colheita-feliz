@@ -223,6 +223,30 @@ main.c.s:
 	cd /Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/build && $(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/main.c.s
 .PHONY : main.c.s
 
+wifi_ap.obj: wifi_ap.c.obj
+.PHONY : wifi_ap.obj
+
+# target to build an object file
+wifi_ap.c.obj:
+	cd /Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/build && $(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/wifi_ap.c.obj
+.PHONY : wifi_ap.c.obj
+
+wifi_ap.i: wifi_ap.c.i
+.PHONY : wifi_ap.i
+
+# target to preprocess a source file
+wifi_ap.c.i:
+	cd /Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/build && $(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/wifi_ap.c.i
+.PHONY : wifi_ap.c.i
+
+wifi_ap.s: wifi_ap.c.s
+.PHONY : wifi_ap.s
+
+# target to generate assembly for a file
+wifi_ap.c.s:
+	cd /Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/build && $(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/wifi_ap.c.s
+.PHONY : wifi_ap.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -242,6 +266,9 @@ help:
 	@echo "... main.obj"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... wifi_ap.obj"
+	@echo "... wifi_ap.i"
+	@echo "... wifi_ap.s"
 .PHONY : help
 
 

@@ -3,6 +3,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/__idf_main.dir/dht11.c.obj.d"
   "CMakeFiles/__idf_main.dir/main.c.obj"
   "CMakeFiles/__idf_main.dir/main.c.obj.d"
+  "CMakeFiles/__idf_main.dir/wifi_ap.c.obj"
+  "CMakeFiles/__idf_main.dir/wifi_ap.c.obj.d"
   "libmain.a"
   "libmain.pdb"
 )

@@ -631,30 +631,6 @@ port/esp32/esp_cpu_intr.c.s:
 	cd /Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/build.make esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32/esp_cpu_intr.c.s
 .PHONY : port/esp32/esp_cpu_intr.c.s
 
-port/esp32/esp_crypto_lock.obj: port/esp32/esp_crypto_lock.c.obj
-.PHONY : port/esp32/esp_crypto_lock.obj
-
-# target to build an object file
-port/esp32/esp_crypto_lock.c.obj:
-	cd /Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/build.make esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32/esp_crypto_lock.c.obj
-.PHONY : port/esp32/esp_crypto_lock.c.obj
-
-port/esp32/esp_crypto_lock.i: port/esp32/esp_crypto_lock.c.i
-.PHONY : port/esp32/esp_crypto_lock.i
-
-# target to preprocess a source file
-port/esp32/esp_crypto_lock.c.i:
-	cd /Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/build.make esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32/esp_crypto_lock.c.i
-.PHONY : port/esp32/esp_crypto_lock.c.i
-
-port/esp32/esp_crypto_lock.s: port/esp32/esp_crypto_lock.c.s
-.PHONY : port/esp32/esp_crypto_lock.s
-
-# target to generate assembly for a file
-port/esp32/esp_crypto_lock.c.s:
-	cd /Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/build.make esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32/esp_crypto_lock.c.s
-.PHONY : port/esp32/esp_crypto_lock.c.s
-
 port/esp32/io_mux.obj: port/esp32/io_mux.c.obj
 .PHONY : port/esp32/io_mux.obj
 
@@ -1229,9 +1205,6 @@ help:
 	@echo "... port/esp32/esp_cpu_intr.obj"
 	@echo "... port/esp32/esp_cpu_intr.i"
 	@echo "... port/esp32/esp_cpu_intr.s"
-	@echo "... port/esp32/esp_crypto_lock.obj"
-	@echo "... port/esp32/esp_crypto_lock.i"
-	@echo "... port/esp32/esp_crypto_lock.s"
 	@echo "... port/esp32/io_mux.obj"
 	@echo "... port/esp32/io_mux.i"
 	@echo "... port/esp32/io_mux.s"

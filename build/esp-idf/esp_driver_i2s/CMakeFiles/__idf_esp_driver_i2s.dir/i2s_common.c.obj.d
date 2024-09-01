@@ -132,6 +132,7 @@ esp-idf/esp_driver_i2s/CMakeFiles/__idf_esp_driver_i2s.dir/i2s_common.c.obj: \
  /Users/juliafarias/esp/esp-idf/components/soc/esp32/include/soc/dport_reg.h \
  /Users/juliafarias/esp/esp-idf/components/soc/esp32/include/soc/dport_access.h \
  /Users/juliafarias/esp/esp-idf/components/hal/include/hal/hal_utils.h \
+ /Users/juliafarias/esp/esp-idf/components/hal/include/hal/dma_types.h \
  /Users/juliafarias/esp/esp-idf/components/hal/esp32/include/hal/adc_ll.h \
  /Users/juliafarias/esp/esp-idf/components/hal/include/hal/adc_types.h \
  /Users/juliafarias/esp/esp-idf/components/hal/platform_port/include/hal/assert.h \

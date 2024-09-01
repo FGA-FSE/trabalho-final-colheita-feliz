@@ -112,4 +112,11 @@ esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/port/brownout.c.obj: \
  /Users/juliafarias/esp/esp-idf/components/bootloader_support/bootloader_flash/include/bootloader_flash_override.h \
  /Users/juliafarias/esp/esp-idf/components/hal/include/hal/brownout_hal.h \
  /Users/juliafarias/esp/esp-idf/components/hal/esp32/include/hal/brownout_ll.h \
- /Users/juliafarias/esp/esp-idf/components/hal/include/hal/psdet_types.h
+ /Users/juliafarias/esp/esp-idf/components/hal/include/hal/psdet_types.h \
+ /Users/juliafarias/esp/esp-idf/components/esp_rom/include/esp_rom_uart.h \
+ /Users/juliafarias/esp/esp-idf/components/hal/esp32/include/hal/uart_ll.h \
+ /Users/juliafarias/esp/esp-idf/components/soc/esp32/include/soc/uart_reg.h \
+ /Users/juliafarias/esp/esp-idf/components/soc/esp32/include/soc/uart_struct.h \
+ /Users/juliafarias/esp/esp-idf/components/soc/esp32/include/soc/dport_reg.h \
+ /Users/juliafarias/esp/esp-idf/components/soc/esp32/include/soc/dport_access.h \
+ /Users/juliafarias/esp/esp-idf/components/hal/include/hal/uart_types.h

@@ -214,4 +214,27 @@ esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_types.cpp.obj: \
  /Users/juliafarias/esp/esp-idf/components/nvs_flash/include/nvs.h \
  /Users/juliafarias/esp/esp-idf/components/nvs_flash/src/compressed_enum_table.hpp \
  /Users/juliafarias/esp/esp-idf/components/nvs_flash/private_include/nvs_internal.h \
+ /Users/juliafarias/esp/esp-idf/components/nvs_flash/src/nvs_page.hpp \
+ /Users/juliafarias/esp/esp-idf/components/spi_flash/include/spi_flash_mmap.h \
+ /Users/juliafarias/esp/esp-idf/components/spi_flash/include/esp_spi_flash_counters.h \
+ /Users/juliafarias/esp/esp-idf/components/nvs_flash/src/intrusive_list.h \
+ /Users/juliafarias/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/xtensa-esp-elf/include/c++/13.2.0/unordered_map \
+ /Users/juliafarias/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/xtensa-esp-elf/include/c++/13.2.0/bits/unordered_map.h \
+ /Users/juliafarias/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/xtensa-esp-elf/include/c++/13.2.0/bits/hashtable.h \
+ /Users/juliafarias/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/xtensa-esp-elf/include/c++/13.2.0/bits/hashtable_policy.h \
+ /Users/juliafarias/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/xtensa-esp-elf/include/c++/13.2.0/bits/node_handle.h \
+ /Users/juliafarias/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/xtensa-esp-elf/include/c++/13.2.0/bits/erase_if.h \
+ /Users/juliafarias/esp/esp-idf/components/nvs_flash/src/nvs_item_hash_list.hpp \
+ /Users/juliafarias/esp/esp-idf/components/nvs_flash/src/nvs_memory_management.hpp \
+ /Users/juliafarias/esp/esp-idf/components/heap/include/esp_heap_caps.h \
+ /Users/juliafarias/esp/esp-idf/components/heap/include/multi_heap.h \
+ /Users/juliafarias/esp/esp-idf/components/nvs_flash/src/partition.hpp \
+ /Users/juliafarias/esp/esp-idf/components/log/include/esp_log.h \
+ /Users/juliafarias/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/xtensa-esp-elf/include/inttypes.h \
+ /Users/juliafarias/esp/esp-idf/components/esp_rom/include/esp_rom_sys.h \
+ /Users/juliafarias/esp/esp-idf/components/soc/esp32/include/soc/reset_reasons.h \
+ /Users/juliafarias/esp/esp-idf/components/log/include/esp_log_level.h \
+ /Users/juliafarias/esp/esp-idf/components/log/include/esp_log_color.h \
+ /Users/juliafarias/esp/esp-idf/components/log/include/esp_log_buffer.h \
+ /Users/juliafarias/esp/esp-idf/components/log/include/esp_log_timestamp.h \
  /Users/juliafarias/esp/esp-idf/components/esp_rom/include/esp_rom_crc.h

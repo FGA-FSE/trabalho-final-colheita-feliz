@@ -1547,18 +1547,6 @@ esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32/esp_cpu_in
   /Users/juliafarias/esp/esp-idf/components/xtensa/include/xtensa_api.h \
   /Users/juliafarias/esp/esp-idf/components/xtensa/include/xtensa_context.h
 
-esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32/esp_crypto_lock.c.obj: /Users/juliafarias/esp/esp-idf/components/esp_hw_support/port/esp32/esp_crypto_lock.c \
-  /Users/juliafarias/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/xtensa-esp-elf/include/_ansi.h \
-  /Users/juliafarias/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/xtensa-esp-elf/include/_newlib_version.h \
-  /Users/juliafarias/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/xtensa-esp-elf/include/machine/ieeefp.h \
-  /Users/juliafarias/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/xtensa-esp-elf/include/newlib.h \
-  /Users/juliafarias/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/xtensa-esp-elf/include/sys/config.h \
-  /Users/juliafarias/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/xtensa-esp-elf/include/sys/features.h \
-  /Users/juliafarias/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/xtensa-esp-elf/include/sys/lock.h \
-  config/sdkconfig.h \
-  /Users/juliafarias/esp/esp-idf/components/esp_hw_support/include/soc/esp32/esp_crypto_lock.h \
-  /Users/juliafarias/esp/esp-idf/components/newlib/platform_include/sys/lock.h
-
 esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32/io_mux.c.obj: /Users/juliafarias/esp/esp-idf/components/esp_hw_support/port/esp32/io_mux.c \
   /Users/juliafarias/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/13.2.0/include/stdarg.h \
   /Users/juliafarias/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/13.2.0/include/stdbool.h \
@@ -3606,8 +3594,6 @@ esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/spi_share_hw_ctrl.c.o
 
 /Users/juliafarias/esp/esp-idf/components/esp_hw_support/port/esp32/io_mux.c:
 
-/Users/juliafarias/esp/esp-idf/components/esp_hw_support/port/esp32/esp_crypto_lock.c:
-
 /Users/juliafarias/esp/esp-idf/components/esp_hw_support/port/esp32/esp_cpu_intr.c:
 
 /Users/juliafarias/esp/esp-idf/components/hal/include/hal/mpu_types.h:
@@ -3859,8 +3845,6 @@ esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/spi_share_hw_ctrl.c.o
 /Users/juliafarias/esp/esp-idf/components/hal/include/hal/cache_types.h:
 
 /Users/juliafarias/esp/esp-idf/components/esp_hw_support/clk_ctrl_os.c:
-
-/Users/juliafarias/esp/esp-idf/components/esp_hw_support/include/soc/esp32/esp_crypto_lock.h:
 
 /Users/juliafarias/esp/esp-idf/components/soc/esp32/include/soc/dport_access.h:
 

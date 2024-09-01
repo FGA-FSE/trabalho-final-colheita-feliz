@@ -1213,16 +1213,19 @@ esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/port/brownout.c.obj: /Users/j
   /Users/juliafarias/esp/esp-idf/components/esp_rom/include/esp_rom_spiflash.h \
   /Users/juliafarias/esp/esp-idf/components/esp_rom/include/esp_rom_spiflash_defs.h \
   /Users/juliafarias/esp/esp-idf/components/esp_rom/include/esp_rom_sys.h \
+  /Users/juliafarias/esp/esp-idf/components/esp_rom/include/esp_rom_uart.h \
   /Users/juliafarias/esp/esp-idf/components/esp_system/include/esp_private/system_internal.h \
   /Users/juliafarias/esp/esp-idf/components/esp_system/include/esp_system.h \
   /Users/juliafarias/esp/esp-idf/components/hal/esp32/include/hal/brownout_ll.h \
   /Users/juliafarias/esp/esp-idf/components/hal/esp32/include/hal/spi_flash_ll.h \
+  /Users/juliafarias/esp/esp-idf/components/hal/esp32/include/hal/uart_ll.h \
   /Users/juliafarias/esp/esp-idf/components/hal/include/hal/brownout_hal.h \
   /Users/juliafarias/esp/esp-idf/components/hal/include/hal/esp_flash_err.h \
   /Users/juliafarias/esp/esp-idf/components/hal/include/hal/psdet_types.h \
   /Users/juliafarias/esp/esp-idf/components/hal/include/hal/spi_flash_hal.h \
   /Users/juliafarias/esp/esp-idf/components/hal/include/hal/spi_flash_types.h \
   /Users/juliafarias/esp/esp-idf/components/hal/include/hal/spi_types.h \
+  /Users/juliafarias/esp/esp-idf/components/hal/include/hal/uart_types.h \
   /Users/juliafarias/esp/esp-idf/components/hal/platform_port/include/hal/misc.h \
   /Users/juliafarias/esp/esp-idf/components/log/include/esp_log.h \
   /Users/juliafarias/esp/esp-idf/components/log/include/esp_log_buffer.h \
@@ -1233,6 +1236,8 @@ esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/port/brownout.c.obj: /Users/j
   /Users/juliafarias/esp/esp-idf/components/newlib/platform_include/sys/lock.h \
   /Users/juliafarias/esp/esp-idf/components/newlib/platform_include/sys/reent.h \
   /Users/juliafarias/esp/esp-idf/components/soc/esp32/include/soc/clk_tree_defs.h \
+  /Users/juliafarias/esp/esp-idf/components/soc/esp32/include/soc/dport_access.h \
+  /Users/juliafarias/esp/esp-idf/components/soc/esp32/include/soc/dport_reg.h \
   /Users/juliafarias/esp/esp-idf/components/soc/esp32/include/soc/gpio_sig_map.h \
   /Users/juliafarias/esp/esp-idf/components/soc/esp32/include/soc/interrupts.h \
   /Users/juliafarias/esp/esp-idf/components/soc/esp32/include/soc/io_mux_reg.h \
@@ -1247,6 +1252,8 @@ esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/port/brownout.c.obj: /Users/j
   /Users/juliafarias/esp/esp-idf/components/soc/esp32/include/soc/spi_pins.h \
   /Users/juliafarias/esp/esp-idf/components/soc/esp32/include/soc/spi_reg.h \
   /Users/juliafarias/esp/esp-idf/components/soc/esp32/include/soc/spi_struct.h \
+  /Users/juliafarias/esp/esp-idf/components/soc/esp32/include/soc/uart_reg.h \
+  /Users/juliafarias/esp/esp-idf/components/soc/esp32/include/soc/uart_struct.h \
   /Users/juliafarias/esp/esp-idf/components/soc/include/soc/rtc_cntl_periph.h \
   /Users/juliafarias/esp/esp-idf/components/soc/include/soc/rtc_io_periph.h \
   /Users/juliafarias/esp/esp-idf/components/soc/include/soc/rtc_periph.h \
@@ -3028,8 +3035,6 @@ esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/xt_wdt.c.obj: /Users/juliafar
 
 /Users/juliafarias/esp/esp-idf/components/esp_system/include/esp_private/startup_internal.h:
 
-/Users/juliafarias/esp/esp-idf/components/esp_rom/include/esp_rom_uart.h:
-
 /Users/juliafarias/esp/esp-idf/components/esp_rom/esp32/include/esp32/rom/secure_boot.h:
 
 /Users/juliafarias/esp/esp-idf/components/esp_mm/include/esp_private/esp_mmu_map_private.h:
@@ -3061,6 +3066,8 @@ esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/xt_wdt.c.obj: /Users/juliafar
 /Users/juliafarias/esp/esp-idf/components/soc/include/soc/spi_periph.h:
 
 /Users/juliafarias/esp/esp-idf/components/soc/esp32/include/soc/spi_struct.h:
+
+/Users/juliafarias/esp/esp-idf/components/soc/esp32/include/soc/gpio_sig_map.h:
 
 /Users/juliafarias/esp/esp-idf/components/hal/esp32/include/hal/spi_flash_ll.h:
 
@@ -3252,6 +3259,8 @@ esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/xt_wdt.c.obj: /Users/juliafar
 
 /Users/juliafarias/esp/esp-idf/components/xtensa/include/xtensa/xtensa-versions.h:
 
+/Users/juliafarias/esp/esp-idf/components/esp_rom/include/esp_rom_uart.h:
+
 /Users/juliafarias/esp/esp-idf/components/xtensa/include/xt_utils.h:
 
 /Users/juliafarias/esp/esp-idf/components/xtensa/include/xtensa/hal.h:
@@ -3337,8 +3346,6 @@ config/sdkconfig.h:
 /Users/juliafarias/esp/esp-idf/components/esp_system/xt_wdt.c:
 
 /Users/juliafarias/esp/esp-idf/components/heap/include/esp_heap_caps.h:
-
-/Users/juliafarias/esp/esp-idf/components/soc/esp32/include/soc/gpio_sig_map.h:
 
 /Users/juliafarias/esp/esp-idf/components/freertos/config/include/freertos/FreeRTOSConfig.h:
 

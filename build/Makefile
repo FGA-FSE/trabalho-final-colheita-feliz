@@ -1020,6 +1020,19 @@ __idf_soc/fast:
 .PHONY : __idf_soc/fast
 
 #=============================================================================
+# Target rules for targets named __idf_esp_security
+
+# Build rule for target.
+__idf_esp_security: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 __idf_esp_security
+.PHONY : __idf_esp_security
+
+# fast build rule for target.
+__idf_esp_security/fast:
+	$(MAKE) $(MAKESILENT) -f esp-idf/esp_security/CMakeFiles/__idf_esp_security.dir/build.make esp-idf/esp_security/CMakeFiles/__idf_esp_security.dir/build
+.PHONY : __idf_esp_security/fast
+
+#=============================================================================
 # Target rules for targets named __idf_esp_hw_support
 
 # Build rule for target.
@@ -1839,19 +1852,6 @@ __idf_wifi_provisioning/fast:
 .PHONY : __idf_wifi_provisioning/fast
 
 #=============================================================================
-# Target rules for targets named __idf_main
-
-# Build rule for target.
-__idf_main: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 __idf_main
-.PHONY : __idf_main
-
-# fast build rule for target.
-__idf_main/fast:
-	$(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/build
-.PHONY : __idf_main/fast
-
-#=============================================================================
 # Target rules for targets named __idf_components
 
 # Build rule for target.
@@ -1863,6 +1863,19 @@ __idf_components: cmake_check_build_system
 __idf_components/fast:
 	$(MAKE) $(MAKESILENT) -f esp-idf/components/CMakeFiles/__idf_components.dir/build.make esp-idf/components/CMakeFiles/__idf_components.dir/build
 .PHONY : __idf_components/fast
+
+#=============================================================================
+# Target rules for targets named __idf_main
+
+# Build rule for target.
+__idf_main: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 __idf_main
+.PHONY : __idf_main
+
+# fast build rule for target.
+__idf_main/fast:
+	$(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/build
+.PHONY : __idf_main/fast
 
 project_elf_src_esp32.obj: project_elf_src_esp32.c.obj
 .PHONY : project_elf_src_esp32.obj
@@ -1990,6 +2003,7 @@ help:
 	@echo "... __idf_esp_pm"
 	@echo "... __idf_esp_ringbuf"
 	@echo "... __idf_esp_rom"
+	@echo "... __idf_esp_security"
 	@echo "... __idf_esp_system"
 	@echo "... __idf_esp_timer"
 	@echo "... __idf_esp_vfs_console"

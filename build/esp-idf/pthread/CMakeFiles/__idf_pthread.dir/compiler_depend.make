@@ -65,6 +65,7 @@ esp-idf/pthread/CMakeFiles/__idf_pthread.dir/pthread.c.obj: /Users/juliafarias/e
   /Users/juliafarias/esp/esp-idf/components/esp_common/include/esp_assert.h \
   /Users/juliafarias/esp/esp-idf/components/esp_common/include/esp_attr.h \
   /Users/juliafarias/esp/esp-idf/components/esp_common/include/esp_bit_defs.h \
+  /Users/juliafarias/esp/esp-idf/components/esp_common/include/esp_check.h \
   /Users/juliafarias/esp/esp-idf/components/esp_common/include/esp_compiler.h \
   /Users/juliafarias/esp/esp-idf/components/esp_common/include/esp_err.h \
   /Users/juliafarias/esp/esp-idf/components/esp_common/include/esp_idf_version.h \
@@ -942,6 +943,8 @@ config/sdkconfig.h:
 /Users/juliafarias/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/xtensa-esp-elf/include/machine/_time.h:
 
 /Users/juliafarias/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/xtensa-esp-elf/include/machine/_endian.h:
+
+/Users/juliafarias/esp/esp-idf/components/esp_common/include/esp_check.h:
 
 /Users/juliafarias/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/xtensa-esp-elf/include/_newlib_version.h:
 

@@ -9,6 +9,7 @@
 #include "wifi.h"
 #include "mqtt.h"
 #include "dht11.h"
+#include "adc_module.h"
 
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
@@ -57,9 +58,11 @@ void handleServerCommunication(void *params)
   {
     while (true)
     {
-      vTaskDelay(1000 / portTICK_PERIOD_MS);
+      vTaskDelay(10000 / portTICK_PERIOD_MS);
 
       sendTemperatureAndHumidityToDashboard();
+
+      sendWaterLevel();
     }
   }
 }
@@ -82,9 +85,9 @@ void app_main(void)
   // Initialize DHT11
   DHT11_init(DHT11_PIN);
 
+  adc_init(ADC_UNIT_1);
+
   xTaskCreate(&wifiConnected, "Wi-Fi Connection", 4096, NULL, 1, NULL);
   xTaskCreate(&handleServerCommunication, "Server Communication", 4096, NULL, 1, NULL);
-
-  xTaskCreate(&waterSensorTask, "Server Communication", 4096, NULL, 1, NULL);
 
 }

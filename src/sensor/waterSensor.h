@@ -5,6 +5,6 @@
 #include "freertos/task.h"
 #include "driver/gpio.h"
 
-void waterSensorTask(void *pvParameter);
+void sendWaterLevel();
 
 #endif

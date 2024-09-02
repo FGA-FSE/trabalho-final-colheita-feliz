@@ -10,13 +10,13 @@
 static const char *TAG = "WATER_SENSOR_APP";
 static esp_mqtt_client_handle_t client; 
 
-void water_sensor_task(void *pvParameter) {
+void waterSensorTask(void *pvParameter) {
     char payload[100];
     while (1) {
 
         int x = analogRead(ADC_CHANNEL_6);
 
-        int porcentagem = x/23
+        int porcentagem = x/23;
 
         sprintf(payload, "{\"waterLevel\": %d}", porcentagem);
         esp_mqtt_client_publish(client, "v1/devices/me/attributes", payload, 0, 1, 0);

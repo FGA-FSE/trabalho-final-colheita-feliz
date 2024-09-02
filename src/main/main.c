@@ -13,6 +13,9 @@
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 
+#include "waterSensor.h"
+
+
 #define DHT11_PIN 5
 
 SemaphoreHandle_t wifiConnectionSemaphore;
@@ -81,4 +84,7 @@ void app_main(void)
 
   xTaskCreate(&wifiConnected, "Wi-Fi Connection", 4096, NULL, 1, NULL);
   xTaskCreate(&handleServerCommunication, "Server Communication", 4096, NULL, 1, NULL);
+
+  xTaskCreate(&waterSensorTask, "Server Communication", 4096, NULL, 1, NULL);
+
 }

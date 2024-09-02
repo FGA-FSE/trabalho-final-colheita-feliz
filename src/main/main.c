@@ -58,7 +58,7 @@ void handleServerCommunication(void *params)
   {
     while (true)
     {
-      vTaskDelay(10000 / portTICK_PERIOD_MS);
+      vTaskDelay(1000 / portTICK_PERIOD_MS);
 
       sendTemperatureAndHumidityToDashboard();
 

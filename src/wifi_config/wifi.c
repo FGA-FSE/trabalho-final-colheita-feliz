@@ -12,8 +12,8 @@
 #include "lwip/err.h"
 #include "lwip/sys.h"
 
-#define WIFI_SSID      "NomeRede"
-#define WIFI_PASS      "SenhaRede"
+#define WIFI_SSID      "PJ804"
+#define WIFI_PASS      "Ma27071921"
 
 #ifndef CONFIG_ESP_MAXIMUM_RETRY
 #define CONFIG_ESP_MAXIMUM_RETRY 5

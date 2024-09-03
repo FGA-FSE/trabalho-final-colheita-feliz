@@ -1,0 +1,13 @@
+/Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/main/adc_module.c: In function 'adc_config_pin':
+/Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/main/adc_module.c:34:9: warning: 'ADC_ATTEN_DB_11' is deprecated [-Wdeprecated-declarations]
+   34 |         .atten = ADC_ATTEN_DB_11,
+      |         ^
+In file included from /Users/juliafarias/esp/esp-idf/components/esp_adc/include/esp_adc/adc_oneshot.h:12,
+                 from /Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/main/adc_module.c:11:
+/Users/juliafarias/esp/esp-idf/components/hal/include/hal/adc_types.h:51:5: note: declared here
+   51 |     ADC_ATTEN_DB_11 __attribute__((deprecated)) = ADC_ATTEN_DB_12,  ///<This is deprecated, it behaves the same as `ADC_ATTEN_DB_12`
+      |     ^~~~~~~~~~~~~~~
+/Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/main/adc_module.c: At top level:
+/Users/juliafarias/Documents/Assets/UnB/trabalho-final-colheita-feliz/main/adc_module.c:13:20: warning: 'TAG' defined but not used [-Wunused-variable]
+   13 | const static char *TAG = "ADC_MODULE";
+      |                    ^~~

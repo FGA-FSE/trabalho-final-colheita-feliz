@@ -8,9 +8,11 @@
 #include "esp_adc/adc_oneshot.h"
 #include "esp_adc/adc_cali.h"
 #include "esp_adc/adc_cali_scheme.h"
+#include "rele.h"
 
 #define EXAMPLE_ADC_ATTEN ADC_ATTEN_DB_11
 #define SENSOR_PIN ADC_CHANNEL_0
+#define RELE_PIN 23
 
 const static char *TAG = "EXAMPLE";
 
@@ -42,6 +44,9 @@ void soil_moisture_task(void *pvParameter) {
     };
     ESP_ERROR_CHECK(adc_oneshot_config_channel(adc1_handle, SensorPin, &config));
 
+    //-------------Rele config---------------//
+    rele_init(RELE_PIN);
+
     while (1) {
         ESP_ERROR_CHECK(adc_oneshot_read(adc1_handle, SensorPin, &adc_raw[0][0]));
         ESP_LOGI(TAG, "ADC%d Channel[%d] Raw Data: %d", ADC_UNIT_1 + 1, SensorPin, adc_raw[0][0]);
@@ -54,7 +59,11 @@ void soil_moisture_task(void *pvParameter) {
             moisture_percent = 0;
         }
         ESP_LOGI(TAG, "Soil Moisture Percent: %d%%", moisture_percent);
-
+        if (moisture_percent < 40){
+            rele_on();
+        } else if (moisture_percent > 60){
+            rele_off();
+        }
         oled_display_soil_moisture(moisture_percent);
 
         vTaskDelay(pdMS_TO_TICKS(1000));

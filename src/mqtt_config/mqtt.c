@@ -15,6 +15,7 @@
 
 #include "mqtt.h"
 #include "dht11.h"
+#include "soil_moisture.h"
 #include "cJSON.h"
 
 #define TAG "MQTT"
@@ -83,15 +84,19 @@ void mqtt_send_message(char *topic, char *message)
     ESP_LOGI(TAG, "Message sent, ID: %d", message_id);
 }
 
-void send_dht11_data()
+void send_sensor_data()
 {
     struct dht11_reading dht11_value = DHT11_read();
+    int soil_moisture = read_soil_moisture();
+
     if (dht11_value.status == DHT11_OK)
     {
-        char message[128];
-        sprintf(message, "{\"temperature\": %d, \"humidity\": %d}", dht11_value.temperature, dht11_value.humidity);
+        char message[256];
+        sprintf(message, "{\"temperature\": %d, \"humidity\": %d, \"soil_moisture\": %d}", 
+                dht11_value.temperature, dht11_value.humidity, soil_moisture);
         mqtt_send_message("v1/devices/me/telemetry", message);
-        ESP_LOGI(TAG, "Temperature: %d, Humidity: %d", dht11_value.temperature, dht11_value.humidity);
+        ESP_LOGI(TAG, "Temperature: %d, Humidity: %d, Soil Moisture: %d", 
+                 dht11_value.temperature, dht11_value.humidity, soil_moisture);
     }
     else
     {

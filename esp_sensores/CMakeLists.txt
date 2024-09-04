@@ -1,7 +1,4 @@
 cmake_minimum_required(VERSION 3.5)
-
-# Define extra component directories
 set(EXTRA_COMPONENT_DIRS "mqtt_config" "sensor" "wifi_config" "json" "soil_moisture" "oled_display")
-
 include($ENV{IDF_PATH}/tools/cmake/project.cmake)
-project(TrabalhoFinalColheitaFeliz)
+project(esp_sensores)

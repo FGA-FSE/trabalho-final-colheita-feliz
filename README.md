@@ -30,6 +30,8 @@ Os componentes totais utilizados foram:
 - Módulo relé
 - Bomba submersiva 5V
 
+## [Link da apresentação no canva](https://www.canva.com/design/DAGPzHB-Ct8/HY_DDxHODpEo9NQLsAg99A/edit?utm_content=DAGPzHB-Ct8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
+
 ## Arquitetura
 
 ![fse](https://github.com/user-attachments/assets/1257d1ab-d65e-4952-97c5-89afa2d24f8f)

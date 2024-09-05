@@ -32,7 +32,7 @@ Os componentes totais utilizados foram:
 
 ## Arquitetura
 
-![fse](https://github.com/user-attachments/assets/4172133d-830f-4f43-9364-46c3a37aca05)
+![fse](https://github.com/user-attachments/assets/1257d1ab-d65e-4952-97c5-89afa2d24f8f)
 
 ## Criar o diretório da esp 
 ```bash

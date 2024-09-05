@@ -88,29 +88,3 @@ void oled_display_update(int temperature, int humidity, int soil_moisture) {
     ESP_LOGI(TAG, "Display atualizado: Temp=%dC, Hum=%d%%, Soil=%d%%", temperature, humidity, soil_moisture);
 }
 
-void app_main(void) {
-    // Inicializa o display OLED
-    oled_display_init(OLED_SDA_PIN, OLED_SCL_PIN);
-
-    // Inicializa o sensor DHT11
-    DHT11_init(DHT11_PIN);
-
-    // Inicializa o sensor de umidade do solo
-    init_soil_moisture(SOIL_MOISTURE_PIN);
-
-    while(1) {
-        // Lê a temperatura e a umidade do ar do sensor DHT11
-        struct dht11_reading dht11_data = DHT11_read();
-        int temperature = dht11_data.temperature;
-        int humidity = dht11_data.humidity;
-
-        // Lê a umidade do solo do sensor
-        int soil_moisture = read_soil_moisture();
-
-        // Atualiza o display OLED com as leituras
-        oled_display_update(temperature, humidity, soil_moisture);
-
-        // Aguarda por 10 segundos antes de realizar a próxima leitura
-        vTaskDelay(pdMS_TO_TICKS(10000));
-    }
-}

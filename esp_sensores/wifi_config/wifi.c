@@ -8,7 +8,6 @@
 #include "esp_event.h"
 #include "esp_log.h"
 #include "nvs_flash.h"
-#include "main.c"
 #include "lwip/err.h"
 #include "lwip/sys.h"
 
@@ -33,26 +32,29 @@ extern SemaphoreHandle_t wifiConnectionSemaphore;
 static void event_handler(void* arg, esp_event_base_t event_base, int32_t event_id, void* event_data)
 {
     if (event_base == WIFI_EVENT && event_id == WIFI_EVENT_STA_START) {
+        ESP_LOGI(TAG, "Wi-Fi STA STARTED");
         esp_wifi_connect();
     } else if (event_base == WIFI_EVENT && event_id == WIFI_EVENT_STA_DISCONNECTED) {
+        ESP_LOGI(TAG, "Wi-Fi DISCONNECTED. Tentando reconectar...");
         if (s_retry_num < WIFI_MAXIMUM_RETRY) {
             esp_wifi_connect();
             s_retry_num++;
-            ESP_LOGI(TAG, "Retry to connect to the AP");
         } else {
+            ESP_LOGI(TAG, "Máximo de tentativas de reconexão atingido.");
             xEventGroupSetBits(s_wifi_event_group, WIFI_FAIL_BIT);
         }
-        ESP_LOGI(TAG, "Failed to connect to the AP");
     } else if (event_base == IP_EVENT && event_id == IP_EVENT_STA_GOT_IP) {
         ip_event_got_ip_t* event = (ip_event_got_ip_t*) event_data;
         ESP_LOGI(TAG, "Got IP: " IPSTR, IP2STR(&event->ip_info.ip));
         s_retry_num = 0;
         xEventGroupSetBits(s_wifi_event_group, WIFI_CONNECTED_BIT);
-        xSemaphoreGive(wifiConnectionSemaphore);
+        xSemaphoreGive(wifiConnectionSemaphore);  // Libera o semáforo
     }
 }
 
 void wifi_start() {
+    ESP_LOGI(TAG, "Iniciando Wi-Fi...");
+    
     s_wifi_event_group = xEventGroupCreate();
 
     ESP_ERROR_CHECK(esp_netif_init());
@@ -75,7 +77,7 @@ void wifi_start() {
     ESP_ERROR_CHECK(esp_wifi_set_config(ESP_IF_WIFI_STA, &wifi_config));
     ESP_ERROR_CHECK(esp_wifi_start());
 
-    ESP_LOGI(TAG, "wifi_init_sta finished.");
+    ESP_LOGI(TAG, "wifi_init_sta finalizado.");
 
     EventBits_t bits = xEventGroupWaitBits(s_wifi_event_group,
                                            WIFI_CONNECTED_BIT | WIFI_FAIL_BIT,
@@ -84,11 +86,11 @@ void wifi_start() {
                                            portMAX_DELAY);
 
     if (bits & WIFI_CONNECTED_BIT) {
-        ESP_LOGI(TAG, "Connected to AP SSID:%s password:%s", WIFI_SSID, WIFI_PASS);
+        ESP_LOGI(TAG, "Conectado ao AP SSID:%s password:%s", WIFI_SSID, WIFI_PASS);
     } else if (bits & WIFI_FAIL_BIT) {
-        ESP_LOGI(TAG, "Failed to connect to SSID:%s, password:%s", WIFI_SSID, WIFI_PASS);
+        ESP_LOGI(TAG, "Falha ao conectar ao SSID:%s, password:%s", WIFI_SSID, WIFI_PASS);
     } else {
-        ESP_LOGE(TAG, "Unexpected event");
+        ESP_LOGE(TAG, "Evento inesperado");
     }
 
     ESP_ERROR_CHECK(esp_event_handler_unregister(IP_EVENT, IP_EVENT_STA_GOT_IP, &event_handler));
@@ -97,25 +99,17 @@ void wifi_start() {
 }
 
 void wifi_stop() {
-    ESP_LOGI(TAG, "Stopping Wi-Fi...");
+    ESP_LOGI(TAG, "Parando Wi-Fi...");
 
-    // Disconnect the Wi-Fi connection
     ESP_ERROR_CHECK(esp_wifi_disconnect());
-
-    // Stop the Wi-Fi driver
     ESP_ERROR_CHECK(esp_wifi_stop());
-
-    // Deinitialize the Wi-Fi driver
     ESP_ERROR_CHECK(esp_wifi_deinit());
-
-    // Deinitialize the default event loop (if no other components are using it)
     ESP_ERROR_CHECK(esp_event_loop_delete_default());
 
-    // Free the Wi-Fi event group
     if (s_wifi_event_group != NULL) {
         vEventGroupDelete(s_wifi_event_group);
         s_wifi_event_group = NULL;
     }
 
-    ESP_LOGI(TAG, "Wi-Fi stopped.");
+    ESP_LOGI(TAG, "Wi-Fi parado.");
 }

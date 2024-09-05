@@ -5,14 +5,11 @@
 #include "esp_system.h"
 #include "esp_event.h"
 #include "esp_netif.h"
-
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "freertos/semphr.h"
-
 #include "esp_log.h"
 #include "mqtt_client.h"
-
 #include "mqtt.h"
 #include "dht11.h"
 #include "soil_moisture.h"
@@ -40,7 +37,7 @@ static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_
     switch ((esp_mqtt_event_id_t)event_id) {
     case MQTT_EVENT_CONNECTED:
         ESP_LOGI(TAG, "MQTT_EVENT_CONNECTED");
-        xSemaphoreGive(mqttConnectionSemaphore);
+        xSemaphoreGive(mqttConnectionSemaphore);  // MQTT conectado
         break;
 
     case MQTT_EVENT_DISCONNECTED:
@@ -84,22 +81,3 @@ void mqtt_send_message(char *topic, char *message)
     ESP_LOGI(TAG, "Message sent, ID: %d", message_id);
 }
 
-void send_sensor_data()
-{
-    struct dht11_reading dht11_value = DHT11_read();
-    int soil_moisture = read_soil_moisture();
-
-    if (dht11_value.status == DHT11_OK)
-    {
-        char message[256];
-        sprintf(message, "{\"temperature\": %d, \"humidity\": %d, \"soil_moisture\": %d}", 
-                dht11_value.temperature, dht11_value.humidity, soil_moisture);
-        mqtt_send_message("v1/devices/me/telemetry", message);
-        ESP_LOGI(TAG, "Temperature: %d, Humidity: %d, Soil Moisture: %d", 
-                 dht11_value.temperature, dht11_value.humidity, soil_moisture);
-    }
-    else
-    {
-        ESP_LOGE(TAG, "Failed to read from DHT11 sensor");
-    }
-}

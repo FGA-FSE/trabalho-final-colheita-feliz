@@ -18,7 +18,6 @@
 #include "driver/ledc.h"
 #include "esp_adc/adc_oneshot.h"
 
-
 static const char *TAG = "MAIN"; 
 adc_oneshot_unit_handle_t adc1_handle;
 
@@ -36,7 +35,7 @@ SemaphoreHandle_t wifiConnectionSemaphore;
 SemaphoreHandle_t mqttConnectionSemaphore;
 
 // Função para inicializar o PWM no GPIO
-void init_pwm_led(int gpio_num)
+void init_pwm_led(int gpio_num, ledc_channel_t channel)
 {
     // Configurar o temporizador LEDC
     ledc_timer_config_t ledc_timer = {
@@ -52,7 +51,7 @@ void init_pwm_led(int gpio_num)
     ledc_channel_config_t ledc_channel = {
         .gpio_num       = gpio_num,
         .speed_mode     = LEDC_HIGH_SPEED_MODE,
-        .channel        = LEDC_CHANNEL_0,
+        .channel        = channel,  // Canal passado como parâmetro
         .timer_sel      = LEDC_TIMER_0,
         .duty           = 0,  // Duty inicial 0%
         .hpoint         = 0
@@ -60,25 +59,32 @@ void init_pwm_led(int gpio_num)
     ESP_ERROR_CHECK(ledc_channel_config(&ledc_channel));
 }
 
-// Função para ajustar o brilho do LED com base no duty cycle
-void set_led_brightness(int soil_moisture)
+// Função para ajustar a cor dos LEDs com base na umidade do ar
+void set_led_color_by_humidity(int humidity)
 {
     int duty_max = (1 << LEDC_TIMER_13_BIT) - 1;  // Valor máximo de duty cycle (8191)
-    int duty = 0;  // Duty inicial para o LED (apagado)
+    int red_duty = 0;
+    int green_duty = 0;
 
-    // Definir brilho com base nos níveis de umidade do solo
-    if (soil_moisture <= 5) {
-        duty = 0;  // Entre 0% e 5%, LED apagado
-    } else if (soil_moisture > 5 && soil_moisture <= 10) {
-        duty = (10 * duty_max) / 100;  // Entre 5% e 10%, LED com luz fraca (10% do brilho)
+    // Quanto menor a umidade, mais vermelho o LED será
+    if (humidity < 10) {
+        red_duty = duty_max;  // Máximo vermelho
+        green_duty = 0;       // Verde apagado
+    } else if (humidity >= 10 && humidity <= 70) {
+        // Interpolação de cores entre vermelho e verde
+        red_duty = (70 - humidity) * duty_max / 40;  // O vermelho diminui conforme a umidade aumenta
+        green_duty = (humidity - 30) * duty_max / 40;  // O verde aumenta conforme a umidade aumenta
     } else {
-        // Acima de 10%, ajustar o brilho proporcionalmente
-        duty = (soil_moisture * duty_max) / 100;  // Ajusta brilho com base na umidade
+        red_duty = 0;         // Apagar o vermelho
+        green_duty = duty_max; // Máximo verde
     }
 
-    // Aplicar o duty cycle ao LED
-    ESP_ERROR_CHECK(ledc_set_duty(LEDC_HIGH_SPEED_MODE, LEDC_CHANNEL_0, duty));
+    // Aplicar os valores de duty cycle
+    ESP_ERROR_CHECK(ledc_set_duty(LEDC_HIGH_SPEED_MODE, LEDC_CHANNEL_0, red_duty));  // LED vermelho
     ESP_ERROR_CHECK(ledc_update_duty(LEDC_HIGH_SPEED_MODE, LEDC_CHANNEL_0));
+    
+    ESP_ERROR_CHECK(ledc_set_duty(LEDC_HIGH_SPEED_MODE, LEDC_CHANNEL_1, green_duty)); // LED verde
+    ESP_ERROR_CHECK(ledc_update_duty(LEDC_HIGH_SPEED_MODE, LEDC_CHANNEL_1));
 }
 
 void init_adc1(void)
@@ -104,6 +110,9 @@ void wifiConnected(void *params)
     }
 }
 
+int last_valid_temperature = -1;  // Armazenar a última leitura válida
+int last_valid_humidity = -1;
+
 void sendSensorDataToDashboard()
 {
     char message[256];
@@ -114,33 +123,44 @@ void sendSensorDataToDashboard()
     // Ler valores do DHT11
     dht11_value = DHT11_read();
 
-    // Ler valor da umidade do solo
-    int soil_moisture = read_soil_moisture();  // Chama a função para ler a umidade do solo
+    // Definir limites aceitáveis para a temperatura e umidade
+    int temp_min = 0, temp_max = 50;
+    int hum_min = 0, hum_max = 100;
 
-    // Ler valor do nível de água
-    int water_level = read_water_level();  // Chama a função para ler o nível de água
-
-    if (dht11_value.status == DHT11_OK)
+    // Verificar se a leitura está dentro dos limites aceitáveis
+    if (dht11_value.temperature >= temp_min && dht11_value.temperature <= temp_max &&
+        dht11_value.humidity >= hum_min && dht11_value.humidity <= hum_max)
     {
-        // Cria a mensagem JSON com temperatura, umidade, umidade do solo e nível de água
-        sprintf(message, "{\"temperature\": %d, \"humidity\": %d, \"soil_moisture\": %d, \"waterLevel\": %d}", 
-                dht11_value.temperature, dht11_value.humidity, soil_moisture, water_level);
-        
-        mqtt_send_message("v1/devices/me/telemetry", message);
-
-        ESP_LOGI("DHT11", "Temperature: %d, Humidity: %d, Soil Moisture: %d, Water Level: %d", 
-                 dht11_value.temperature, dht11_value.humidity, soil_moisture, water_level);
-
-        // Atualizar o display OLED com a temperatura, umidade e umidade do solo
-        oled_display_update(dht11_value.temperature, dht11_value.humidity, soil_moisture);
-
-        // Ajustar o brilho do LED com base na umidade do solo
-        set_led_brightness(soil_moisture);  // Usar a leitura de umidade para o brilho do LED
+        last_valid_temperature = dht11_value.temperature;
+        last_valid_humidity = dht11_value.humidity;
     }
     else
     {
-        ESP_LOGE("DHT11", "Falha ao ler o sensor DHT11. Status: %d", dht11_value.status);
+        // Se a leitura for inválida, usar a última leitura válida
+        dht11_value.temperature = last_valid_temperature;
+        dht11_value.humidity = last_valid_humidity;
+        ESP_LOGW("DHT11", "Leitura inválida, usando último valor válido.");
     }
+
+    // Ler o solo e nível de água como de costume
+    int soil_moisture = read_soil_moisture();
+    int water_level = read_water_level();
+
+    // Cria a mensagem JSON com os dados
+    sprintf(message, "{\"temperature\": %d, \"humidity\": %d, \"soil_moisture\": %d, \"waterLevel\": %d}",
+            dht11_value.temperature, dht11_value.humidity, soil_moisture, water_level);
+
+    // Enviar via MQTT
+    mqtt_send_message("v1/devices/me/telemetry", message);
+
+    ESP_LOGI("DHT11", "Temperature: %d, Humidity: %d, Soil Moisture: %d, Water Level: %d",
+             dht11_value.temperature, dht11_value.humidity, soil_moisture, water_level);
+
+    // Atualizar OLED
+    oled_display_update(dht11_value.temperature, dht11_value.humidity, soil_moisture);
+
+    // Ajustar cor dos LEDs com base na umidade do ar
+    set_led_color_by_humidity(dht11_value.humidity);
 }
 
 void handleServerCommunication(void *params)
@@ -175,22 +195,21 @@ void app_main(void)
     // Inicializar o ADC1
     init_adc1();
 
-
     // Inicializar DHT11
     DHT11_init(DHT11_PIN);  
 
     // Inicializar o display OLED
     oled_display_init(OLED_SDA_PIN, OLED_SCL_PIN);
 
-        // Inicializar o sensor de umidade do solo
-    init_soil_moisture();  // Passar o pino do sensor de umidade do solo
+    // Inicializar o sensor de umidade do solo
+    init_soil_moisture();
 
     // Inicializar o sensor de nível de água
-    init_water_level_sensor();  // Passar o pino do sensor de nível de água
+    init_water_level_sensor();
 
-
-    // Inicializar o LED PWM
-    init_pwm_led(LED_GREEN_GPIO);
+    // Inicializar LEDs PWM para o controle de cor
+    init_pwm_led(LED_RED_GPIO, LEDC_CHANNEL_0);   // LED vermelho no canal 0
+    init_pwm_led(LED_GREEN_GPIO, LEDC_CHANNEL_1); // LED verde no canal 1
 
     // Criar as tarefas
     xTaskCreate(&wifiConnected, "Wi-Fi Connection", 4096, NULL, 2, NULL);  

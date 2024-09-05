@@ -13,6 +13,8 @@
 | 170085023 | Carla Rocha    |
 | 180103792 | Júlia Farias   |
 
+[Link da apresentação no canva](https://www.canva.com/design/DAGPzHB-Ct8/HY_DDxHODpEo9NQLsAg99A/edit?utm_content=DAGPzHB-Ct8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
+
 ## Contexto e Componentes do Projeto
 
 A ideia principal do projeto é fornecer uma ferramenta que possibilite o monitoramento e irrigação automatizada de uma estufa de acordo com as necessidades captadas. Dessa forma, utilizaremos sensores para mensurar a temperatura e umidade do solo e, quando necessário, será enviado um comando que acionará a irrigação. 
@@ -29,8 +31,6 @@ Os componentes totais utilizados foram:
 - Sensor de chuva
 - Módulo relé
 - Bomba submersiva 5V
-
-## [Link da apresentação no canva](https://www.canva.com/design/DAGPzHB-Ct8/HY_DDxHODpEo9NQLsAg99A/edit?utm_content=DAGPzHB-Ct8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 
 ## Arquitetura
 

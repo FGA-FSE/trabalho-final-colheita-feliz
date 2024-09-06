@@ -12,10 +12,10 @@ extern adc_oneshot_unit_handle_t adc1_handle;
 
 void init_soil_moisture(void)
 {
-    // Configuração do canal de umidade do solo (canal 0)
+    
     adc_oneshot_chan_cfg_t config = {
-        .atten = ADC_ATTEN_DB_11,  // Usar atenuação de 11 dB para maior faixa de leitura de tensão
-        .bitwidth = ADC_BITWIDTH_DEFAULT,  // Largura de bit padrão (12 bits)
+        .atten = ADC_ATTEN_DB_11,  
+        .bitwidth = ADC_BITWIDTH_DEFAULT,  
     };
     
     // Configurar o canal 0 para o sensor de umidade do solo
@@ -37,18 +37,17 @@ int read_soil_moisture(void)
 
     ESP_LOGI("SOIL_MOISTURE", "ADC Raw Data: %d", adc_raw);
 
-    // Definir os valores máximos e mínimos de umidade com base nos testes
-    int adc_min = 1200;  // Valor mínimo de leitura do sensor quando o solo está seco
-    int adc_max = 3200;  // Valor máximo de leitura do sensor quando o solo está totalmente molhado
+    
+    int adc_min = 1200;  
+    int adc_max = 3200;  
 
     // Verificar se o valor está fora dos limites esperados
     if (adc_raw < adc_min) {
-        adc_raw = adc_min;  // Evitar valores negativos
+        adc_raw = adc_min;  
     } else if (adc_raw > adc_max) {
-        adc_raw = adc_max;  // Limitar o valor máximo
+        adc_raw = adc_max;  
     }
 
-    // Calcular a porcentagem de umidade do solo
     int moisture_percent = ((adc_max - adc_raw) * 100) / (adc_max - adc_min);
 
     return moisture_percent;

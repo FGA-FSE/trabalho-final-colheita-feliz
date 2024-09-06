@@ -27,11 +27,11 @@
 #define WATER_SENSOR_PIN ADC1_CHANNEL_7    // Pino ADC para o sensor de nível de água (GPIO 35 - canal 7 do ADC1)
 #define OLED_SDA_PIN 4                     // Pino SDA do display OLED
 #define OLED_SCL_PIN 15                    // Pino SCL do display OLED
-#define RELAY_GPIO 25                      // Definir o GPIO 25 para o controle do módulo relé
+#define RELAY_GPIO 25                      // GPIO 25 para o controle do módulo relé
 
 adc_oneshot_unit_handle_t adc1_handle;
-extern bool dht11_sensor_active;  // Variável definida em mqtt.c
-extern bool water_level_sensor_active;  // Variável global para controle do sensor de nível de água
+extern bool dht11_sensor_active;  
+extern bool water_level_sensor_active;  
 
 SemaphoreHandle_t wifiConnectionSemaphore;
 SemaphoreHandle_t mqttConnectionSemaphore;
@@ -41,8 +41,8 @@ void init_pwm_led(int gpio_num, ledc_channel_t channel) {
     ledc_timer_config_t ledc_timer = {
         .speed_mode       = LEDC_HIGH_SPEED_MODE,
         .timer_num        = LEDC_TIMER_0,
-        .duty_resolution  = LEDC_TIMER_13_BIT,  // Resolução de 13 bits para o duty cycle
-        .freq_hz          = 5000,  // Frequência de 5 kHz
+        .duty_resolution  = LEDC_TIMER_13_BIT,  
+        .freq_hz          = 5000,  
         .clk_cfg          = LEDC_AUTO_CLK
     };
     ESP_ERROR_CHECK(ledc_timer_config(&ledc_timer));
@@ -52,7 +52,7 @@ void init_pwm_led(int gpio_num, ledc_channel_t channel) {
         .speed_mode     = LEDC_HIGH_SPEED_MODE,
         .channel        = channel,
         .timer_sel      = LEDC_TIMER_0,
-        .duty           = 0,  // Inicialmente duty cycle 0% (LED apagado)
+        .duty           = 0,  
         .hpoint         = 0
     };
     ESP_ERROR_CHECK(ledc_channel_config(&ledc_channel));
@@ -60,7 +60,7 @@ void init_pwm_led(int gpio_num, ledc_channel_t channel) {
 
 // Função para ajustar o brilho do LED verde
 void set_led_brightness(int green_brightness) {
-    int green_duty = (green_brightness * 8191) / 100;  // Mapeia 0-100 para 0-8191 (13 bits)
+    int green_duty = (green_brightness * 8191) / 100;  
 
     ESP_LOGI(TAG, "Ajustando o duty cycle do LED verde para: %d (Brilho: %d%%)", green_duty, green_brightness);
 
@@ -72,16 +72,14 @@ void set_led_brightness(int green_brightness) {
 // Função para inicializar o ADC1
 void init_adc1(void) {
     adc_oneshot_unit_init_cfg_t init_config = {
-        .unit_id = ADC_UNIT_1,  // Usar ADC1
+        .unit_id = ADC_UNIT_1,  
     };
-
-    // Inicializar o ADC1 e armazenar o handle em adc1_handle
     ESP_ERROR_CHECK(adc_oneshot_new_unit(&init_config, &adc1_handle));
 }
 
-// Função para enviar dados dos sensores para o MQTT (ThingsBoard)
+// Função para enviar dados dos sensores para o MQTT
 void sendSensorDataToDashboard() {
-    char message[256];  // Variável de mensagem para o MQTT
+    char message[256]; 
     int temperature = -1;
     int humidity = -1;
     int water_level = -1;
@@ -89,7 +87,7 @@ void sendSensorDataToDashboard() {
     // Lendo o sensor de umidade do solo
     int soil_moisture = read_soil_moisture();
 
-    // Verificando se o sensor DHT11 está ativo antes de ler
+   
     if (dht11_sensor_active) {
         temperature = DHT11_read().temperature;
         humidity = DHT11_read().humidity;
@@ -98,7 +96,7 @@ void sendSensorDataToDashboard() {
         ESP_LOGI("SENSORS", "DHT11 desativado, ignorando leitura.");
     }
 
-    // Verificando se o sensor de nível de água está ativo antes de ler
+ 
     if (water_level_sensor_active) {
         water_level = read_water_level();
         ESP_LOGI("SENSORS", "Water Level: %d", water_level);
@@ -109,20 +107,20 @@ void sendSensorDataToDashboard() {
     // Atualizando o display OLED
     oled_display_update(temperature, humidity, soil_moisture);
 
-    // Preparando mensagem para envio
+
     snprintf(message, sizeof(message), "{\"temperature\":%d,\"humidity\":%d,\"soil_moisture\":%d,\"water_level\":%d}", 
              temperature, humidity, soil_moisture, water_level);
 
-    // Enviando a mensagem via MQTT para o ThingsBoard
+    // Enviando a mensagem via MQTT
     mqtt_send_message_thingsboard("v1/devices/me/telemetry", message);
 }
 
-// Tarefa de comunicação com o servidor MQTT (ThingsBoard)
+// Tarefa de comunicação com o servidor MQTT
 void handleServerCommunication(void *params) {
     if (xSemaphoreTake(mqttConnectionSemaphore, portMAX_DELAY)) {
         while (true) {
-            vTaskDelay(10000 / portTICK_PERIOD_MS);  // Atraso de 10 segundos
-            sendSensorDataToDashboard();  // Enviar dados periodicamente
+            vTaskDelay(10000 / portTICK_PERIOD_MS);  
+            sendSensorDataToDashboard();  
         }
     }
 }
@@ -146,8 +144,6 @@ void app_main(void) {
 
     // Inicializar os sensores e periféricos
     init_pwm_led(LED_GREEN_GPIO, LEDC_CHANNEL_1);
-
-    // Definir o brilho inicial do LED verde (teste com 50% de brilho)
     set_led_brightness(50);  
 
     init_adc1();
@@ -156,12 +152,13 @@ void app_main(void) {
     init_soil_moisture();
     init_water_level_sensor();
     init_relay();
-    set_relay_state(false);
+ 
+    set_relay_state(false); 
 
     // Iniciar o MQTT para ThingsBoard e Mosquitto
-    mqtt_start_thingsboard();  // Conexão com ThingsBoard
-    mqtt_start_mosquitto();    // Conexão com Mosquitto
+    mqtt_start_thingsboard();
+    mqtt_start_mosquitto();
 
-    // Criar tarefas de comunicação com o ThingsBoard
+    // Criar tarefas de comunicação
     xTaskCreate(&handleServerCommunication, "Server Communication", 4096, NULL, 1, NULL);
 }

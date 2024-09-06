@@ -3,10 +3,10 @@
 #include "esp_sleep.h"
 #include "esp_log.h"
 
-#define BUTTON_GPIO 0  // GPIO do botão
+#define BUTTON_GPIO 0  
 
 void init_button(void) {
-    gpio_reset_pin(BUTTON_GPIO);  // Substituir esp_rom_gpio_pad_select_gpio por gpio_reset_pin
+    gpio_reset_pin(BUTTON_GPIO);  
     gpio_set_direction(BUTTON_GPIO, GPIO_MODE_INPUT);
     gpio_pulldown_en(BUTTON_GPIO);  // Habilitar pull-down para garantir o estado baixo
     ESP_LOGI("BUTTON", "Botão inicializado no GPIO %d", BUTTON_GPIO);

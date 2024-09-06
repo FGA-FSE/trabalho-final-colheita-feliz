@@ -9,8 +9,7 @@
 #include "nvs_flash.h"
 
 #define TAG "ESP_CONTROLE"
-#define BUTTON_GPIO 0  // GPIO 0 conectado ao botão
-
+#define BUTTON_GPIO 0  
 SemaphoreHandle_t wifiConnectionSemaphore;
 
 void app_main(void) {

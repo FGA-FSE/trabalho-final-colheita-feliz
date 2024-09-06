@@ -14,7 +14,7 @@
 #include "cJSON.h"
 #include "driver/ledc.h"
 #include <stdbool.h>
-#include "relay.h"  // Certifique-se de incluir relay.h para usar process_relay_command
+#include "relay.h"  
 
 #define TAG "MQTT"
 
@@ -23,8 +23,8 @@ bool dht11_sensor_active = true;
 bool water_level_sensor_active = true;
 extern SemaphoreHandle_t mqttConnectionSemaphore;
 
-esp_mqtt_client_handle_t client_thingsboard;   // Cliente para conexão com ThingsBoard
-esp_mqtt_client_handle_t client_mosquitto;     // Cliente para conexão com Mosquitto
+esp_mqtt_client_handle_t client_thingsboard;   
+esp_mqtt_client_handle_t client_mosquitto;    
 
 // Função de ajuste do brilho do LED verde
 extern void set_led_brightness(int green_brightness);
@@ -36,7 +36,7 @@ static void log_error_if_nonzero(const char *message, int error_code) {
     }
 }
 
-/// Função para manipular o recebimento de RPC do MQTT (ThingsBoard)
+/// Função para manipular o recebimento de MQTT
 void handle_mqtt_rpc_request(esp_mqtt_event_handle_t event) {
     ESP_LOGI(TAG, "Recebendo comando RPC...");
 
@@ -63,10 +63,15 @@ void handle_mqtt_rpc_request(esp_mqtt_event_handle_t event) {
         int green_value = params->valueint;
         ESP_LOGI(TAG, "Brilho recebido para o LED verde: %d%%", green_value);
         set_led_brightness(green_value);  // Ajustar o brilho do LED verde
+    } else if (strcmp(method->valuestring, "setRelayState") == 0) {
+        bool relay_state = params->valueint;
+        ESP_LOGI(TAG, "Estado do relé recebido: %s", relay_state ? "Ligado" : "Desligado");
+        set_relay_state(relay_state);  
     }
 
     cJSON_Delete(request);
 }
+
 
 // Função de callback para eventos MQTT do ThingsBoard
 static void mqtt_event_handler_thingsboard(void *handler_args, esp_event_base_t base, int32_t event_id, void *event_data) {
@@ -117,8 +122,8 @@ void mqtt_event_handler_mosquitto(void *handler_args, esp_event_base_t base, int
 
             // Passa o objeto JSON para o processamento
             ESP_LOGI(TAG, "JSON processado com sucesso. Enviando para o process_relay_command");
-            process_relay_command(request);  // Verifique se essa função é chamada corretamente
-            cJSON_Delete(request);  // Libera a memória do objeto JSON
+            process_relay_command(request);  
+            cJSON_Delete(request);  
             break;
 
         case MQTT_EVENT_ERROR:
@@ -135,7 +140,7 @@ void mqtt_event_handler_mosquitto(void *handler_args, esp_event_base_t base, int
 // Função para iniciar a conexão MQTT com o ThingsBoard
 void mqtt_start_thingsboard() {
     const esp_mqtt_client_config_t mqtt_config_thingsboard = {
-        .broker.address.uri = "mqtt://164.41.98.25", // Endereço do broker do ThingsBoard
+        .broker.address.uri = "mqtt://164.41.98.25", 
         .credentials.username = "Has1xP8P9E9mFEN882eX"
     };
     client_thingsboard = esp_mqtt_client_init(&mqtt_config_thingsboard);
@@ -147,7 +152,7 @@ void mqtt_start_thingsboard() {
 void mqtt_start_mosquitto() {
     ESP_LOGI(TAG, "Iniciando conexão com o Mosquitto...");
     const esp_mqtt_client_config_t mqtt_config_mosquitto = {
-        .broker.address.uri = "mqtt://test.mosquitto.org",  // Endereço do broker Mosquitto
+        .broker.address.uri = "mqtt://test.mosquitto.org", 
     };
     client_mosquitto = esp_mqtt_client_init(&mqtt_config_mosquitto);
     if (client_mosquitto == NULL) {

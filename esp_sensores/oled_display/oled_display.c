@@ -5,11 +5,11 @@
 #include "dht11.h"
 #include "soil_moisture.h"
 #include "driver/adc.h"
-#include "ssd1306.h"  // Certifique-se de que esta inclusão esteja correta para o seu ambiente
+#include "ssd1306.h"  
 
-// Definições de pinos e parâmetros para o I2C
-#define I2C_MASTER_SCL_IO           15    // GPIO para SCL (D15)
-#define I2C_MASTER_SDA_IO           4     // GPIO para SDA (D4)
+
+#define I2C_MASTER_SCL_IO           15    
+#define I2C_MASTER_SDA_IO           4    
 #define I2C_MASTER_NUM              I2C_NUM_0
 #define I2C_MASTER_FREQ_HZ          100000
 #define I2C_MASTER_TX_BUF_DISABLE   0
@@ -19,8 +19,8 @@
 #define OLED_ADDR                   0x3C
 
 // Definições de pinos para sensores
-#define DHT11_PIN                   18    // GPIO para DHT11 (D18)
-#define SOIL_MOISTURE_PIN           ADC1_CHANNEL_0  // ADC1 Channel para o sensor de umidade do solo (GPIO36)
+#define DHT11_PIN                   18   
+#define SOIL_MOISTURE_PIN           ADC1_CHANNEL_0 
 
 static const char *TAG = "OLED";
 
@@ -43,16 +43,14 @@ void i2c_master_init(int sda_pin, int scl_pin) {
 
 // Função para inicializar o display OLED
 void oled_display_init(int sda_pin, int scl_pin) {
-    // Inicializar o I2C com os pinos especificados
     i2c_master_init(sda_pin, scl_pin);
 
     dev = ssd1306_create(I2C_MASTER_NUM, OLED_ADDR);
     if (dev == NULL) {
         ESP_LOGE(TAG, "Falha na criação do SSD1306");
-        while (1); // Loop infinito para indicar falha
+        while (1); 
     }
     ssd1306_clear_screen(dev, 0x00);
-    ssd1306_refresh_gram(dev); // Atualiza o display para mostrar as mudanças
     ESP_LOGI(TAG, "Display OLED inicializado com sucesso");
 }
 
@@ -83,8 +81,7 @@ void oled_display_update(int temperature, int humidity, int soil_moisture) {
     // Exibe a umidade do solo
     sprintf(buffer, "Soil: %d%%", soil_moisture);
     ssd1306_draw_string(dev, 0, 32, (const uint8_t*)buffer, 12, 1);
-
-    ssd1306_refresh_gram(dev); // Atualiza o display para mostrar as mudanças
+    ssd1306_refresh_gram(dev); 
     ESP_LOGI(TAG, "Display atualizado: Temp=%dC, Hum=%d%%, Soil=%d%%", temperature, humidity, soil_moisture);
 }
 

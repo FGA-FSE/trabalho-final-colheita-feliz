@@ -1,13 +1,16 @@
-/*
- * SPDX-FileCopyrightText: 2015-2023 Espressif Systems (Shanghai) CO LTD
- *
- * SPDX-License-Identifier: Apache-2.0
- */
+// Copyright 2015-2021 Espressif Systems (Shanghai) CO LTD
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
 
-/**
- * @file
- * @brief SSD1306 driver
- */
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
 
 #pragma once
 
@@ -16,9 +19,9 @@ extern "C"
 {
 #endif
 
+#include "driver/gpio.h"
 #include "driver/i2c.h"
 #include "stdint.h"
-#include "ssd1306_fonts.h"
 
 /**
  * @brief  I2C address.
@@ -50,8 +53,7 @@ esp_err_t ssd1306_init(ssd1306_handle_t dev);
  * @return
  *     - device object handle of ssd1306
  */
-ssd1306_handle_t ssd1306_create(i2c_port_t port, uint16_t dev_addr)
-__attribute__((deprecated("This driver is DEPRECATED. Please use updated SSD1306 driver from ESP-IDF.")));
+ssd1306_handle_t ssd1306_create(i2c_port_t port, uint16_t dev_addr);
 
 /**
  * @brief   Delete and release a device object
@@ -67,6 +69,9 @@ void ssd1306_delete(ssd1306_handle_t dev);
  * @param   chXpos Specifies the X position
  * @param   chYpos Specifies the Y position
  * @param   chPoint fill point
+ *
+ * @return
+ *     - NULL
  */
 void ssd1306_fill_point(ssd1306_handle_t dev, uint8_t chXpos, uint8_t chYpos, uint8_t chPoint);
 
@@ -92,6 +97,9 @@ void ssd1306_fill_rectangle(ssd1306_handle_t dev, uint8_t chXpos1, uint8_t chYpo
  * @param   chSize char size
  * @param   chChr draw char
  * @param   chMode display mode
+ *
+ * @return
+ *     - NULL
  */
 void ssd1306_draw_char(ssd1306_handle_t dev, uint8_t chXpos,
                        uint8_t chYpos, uint8_t chChr, uint8_t chSize, uint8_t chMode);
@@ -105,6 +113,9 @@ void ssd1306_draw_char(ssd1306_handle_t dev, uint8_t chXpos,
  * @param   chNum draw num
  * @param   chLen length
  * @param   chSize display size
+ *
+ * @return
+ *     - NULL
  */
 void ssd1306_draw_num(ssd1306_handle_t dev, uint8_t chXpos,
                       uint8_t chYpos, uint32_t chNum, uint8_t chLen, uint8_t chSize);
@@ -116,6 +127,9 @@ void ssd1306_draw_num(ssd1306_handle_t dev, uint8_t chXpos,
  * @param   chXpos Specifies the X position
  * @param   chYpos Specifies the Y position
  * @param   chChar draw char
+ *
+ * @return
+ *     - NULL
  */
 void ssd1306_draw_1616char(ssd1306_handle_t dev, uint8_t chXpos, uint8_t chYpos, uint8_t chChar);
 
@@ -126,6 +140,9 @@ void ssd1306_draw_1616char(ssd1306_handle_t dev, uint8_t chXpos, uint8_t chYpos,
  * @param   chXpos Specifies the X position
  * @param   chYpos Specifies the Y position
  * @param   chChar draw char
+ *
+ * @return
+ *     - NULL
  */
 void ssd1306_draw_3216char(ssd1306_handle_t dev, uint8_t chXpos, uint8_t chYpos, uint8_t chChar);
 
@@ -138,20 +155,12 @@ void ssd1306_draw_3216char(ssd1306_handle_t dev, uint8_t chXpos, uint8_t chYpos,
  * @param   pchBmp point to BMP data
  * @param   chWidth picture width
  * @param   chHeight picture heght
+ *
+ * @return
+ *     - NULL
  */
 void ssd1306_draw_bitmap(ssd1306_handle_t dev, uint8_t chXpos, uint8_t chYpos,
                          const uint8_t *pchBmp, uint8_t chWidth, uint8_t chHeight);
-
-/**
- * @brief   draw line between two specified points
- *
- * @param   dev object handle of ssd1306
- * @param   chXpos1 Specifies the X position of the starting point of the line
- * @param   chYpos1 Specifies the Y position of the starting point of the line
- * @param   chXpos2 Specifies the X position of the ending point of the line
- * @param   chYpos2 Specifies the Y position of the ending point of the line
- */
-void ssd1306_draw_line(ssd1306_handle_t dev, int16_t chXpos1, int16_t chYpos1, int16_t chXpos2, int16_t chYpos2);
 
 /**
  * @brief   refresh dot matrix panel

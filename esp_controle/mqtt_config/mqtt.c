@@ -14,7 +14,7 @@ static void mqtt_event_handler_cb(void *handler_args, esp_event_base_t base, int
 
 void mqtt_start() {
     esp_mqtt_client_config_t mqtt_cfg = {
-        .broker.address.uri = "mqtt://test.mosquitto.org",  // Correção para ESP-IDF 5.x
+        .broker.address.uri = "mqtt://test.mosquitto.org",  
     };
 
     client = esp_mqtt_client_init(&mqtt_cfg);

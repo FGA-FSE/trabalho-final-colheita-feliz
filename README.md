@@ -58,17 +58,26 @@ cd ~/esp/esp-idf
 ```
 ## Buildar o projeto 
 
-- entrar no diretório do projeto e rodar: 
+- entrar no diretório do projeto e rodar o código da esp32 de sensores: 
+
 ```bash
+cd esp_sensores
 idf.py build
+idf.py flash
+idf.py monitor
+
 ```
- ## Com a placa conectada mande seu código para ela 
 
- ```bash
- idf.py flash
- ```
-ou 
 
- ```bash
-idf.py -p PORT flash
- ```
+- entrar no diretório do projeto e rodar o código da esp32 do controle: 
+
+```bash
+cd esp_controle
+idf.py build
+idf.py flash
+idf.py monitor
+
+```
+
+- Link para o vídeo demonstrativo dos ajustes finais 
+https://youtu.be/jp3WK-EmWbE

@@ -81,3 +81,4 @@ idf.py monitor
 
 - Link para o vídeo demonstrativo dos ajustes finais 
 https://youtu.be/jp3WK-EmWbE
+> *Observação*: Durante o processo de ajuste para estabelecer a comunicação entre as duas ESPs, ocorreu um incidente em que o relé queimou. Devido a isso, não foi possível demonstrar seu funcionamento no vídeo.

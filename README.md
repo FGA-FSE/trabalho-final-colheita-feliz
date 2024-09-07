@@ -41,6 +41,7 @@ Os componentes totais utilizados foram:
 ![PHOTO-2024-09-06-20-19-56](https://github.com/user-attachments/assets/d6113758-36f6-43fc-bbad-9d3790996c1c)
 
 Link para o [vídeo demonstrativo dos ajustes finais](https://youtu.be/jp3WK-EmWbE)  
+
 *Observação*: Durante o processo de ajuste para estabelecer a comunicação entre as duas ESPs (feita depois da apresentação do projeto), ocorreu um incidente em que o relé queimou. Devido a isso, não foi possível demonstrar seu funcionamento no vídeo.
 
 ## Criar o diretório da esp 

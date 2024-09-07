@@ -32,9 +32,13 @@ Os componentes totais utilizados foram:
 - Módulo relé
 - Bomba submersiva 5V
 
-## Arquitetura
+## Arquitetura apresentada como trabalho final
 
 ![fse](https://github.com/user-attachments/assets/1257d1ab-d65e-4952-97c5-89afa2d24f8f)
+
+## Arquitetura depois das alterações propostas
+
+![PHOTO-2024-09-06-20-19-56](https://github.com/user-attachments/assets/d6113758-36f6-43fc-bbad-9d3790996c1c)
 
 ## Criar o diretório da esp 
 ```bash
